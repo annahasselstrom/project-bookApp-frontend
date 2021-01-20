@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+
+import { BookList } from "./components/BookList";
+import { ListsList } from "./components/ListsList";
+import { LandingPage } from "./components/LandingPage";
+import { BookDetails } from "./components/BookDetails";
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <>
+      <LandingPage />
+      <BookList />
+      <ListsList />
+      <BookDetails />
+      </>
   )
 }
