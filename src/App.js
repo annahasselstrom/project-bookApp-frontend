@@ -1,17 +1,28 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
-import { BookList } from "./components/BookList";
+
 import { ListsList } from "./components/ListsList";
-import { LandingPage } from "./components/LandingPage";
+import { HomePage } from "./components/HomePage";
 import { BookDetails } from "./components/BookDetails";
+import { Login } from "./components/Login";
+import { user } from "./reducers/user";
+
+const reducer = combineReducers({ user: user.reducer });
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
     <>
-      <LandingPage />
-      <BookList />
+      <Provider store={store}>
+      <main>
+        <Login />
+      </main>
       <ListsList />
-      <BookDetails />
+        <BookDetails />
+      </Provider>
+
       </>
   )
 }

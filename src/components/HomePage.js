@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { user } from "../reducers/user";
+
 
 
 // base
@@ -21,13 +25,17 @@ import React, { useState } from "react";
 //const API_URL = `https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key=${API_KEY}`;
 
 
-export const BookList = () => {
+export const HomePage = () => {
     const [book, setBook] = useState('');
     const [result, setResult] = useState([]);
+    const dispatch = useDispatch();
+
 
     const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
     const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${API_KEY}`;
-        console.log(API_URL)
+    console.log(API_URL)
+    
+    
 
     const handleChange = (event) => {
         const book = event.target.value;
@@ -44,8 +52,18 @@ export const BookList = () => {
     })
             
     };
+
+    const handleLogout = (event) => {
+        event.preventDefault();
+    
+        dispatch(user.actions.logout());
+        dispatch(user.actions.setStatusMessage({ statusMessage: "Logged out!" }));
+      };
     return (
         <>
+            <button type="submit" onClick={handleLogout}>
+                  Logout
+        </button>
             <h1>Books</h1>
             <form onSubmit={handleSubmit}>
             <input
@@ -71,3 +89,5 @@ export const BookList = () => {
     </>
     );
 };
+
+

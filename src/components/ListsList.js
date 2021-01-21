@@ -5,10 +5,10 @@ export const ListsList = () => {
   const [result, setResult] = useState([]);
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
-  //const API_URL_YOUNG = `https://www.googleapis.com/books/v1/volumes?q=subject:'juvenile+fiction'&langRestrict="fr"&key=${API_KEY}`;
-  const API_URL_SOC = `https://www.googleapis.com/books/v1/volumes?q=subject:'anthropology'&langRestrict="fr"&key=${API_KEY}`;
+  const API_URL_YOUNG = `https://www.googleapis.com/books/v1/volumes?q=subject:'juvenile+fiction'&langRestrict="fr"&key=${API_KEY}`;
+  const API_URL_ANT = `https://www.googleapis.com/books/v1/volumes?q=subject:'anthropology'&langRestrict="fr"&key=${API_KEY}`;
  
-    //console.log(API_URL_ADV)
+    //console.log(API_URL_ANT)
     //console.log(API_URL_YOUNG);
 
     const handleChange = (event) => {
@@ -18,16 +18,13 @@ export const ListsList = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        fetch(API_URL_SOC)
+        fetch(API_URL_YOUNG)
             .then((res) => res.json())
             .then(data => {
                 setResult(data.items);
             })
-    };
-        
+    }; 
     
-
     //map and output
     return (
         <>
@@ -38,7 +35,7 @@ export const ListsList = () => {
                     Young at Heart
             </button>
             <button
-                type="submit" onChange={handleChange}>
+                type="submit" id="anthropology" onChange={handleChange}>
                     Anthropology
             </button>
             </form>
