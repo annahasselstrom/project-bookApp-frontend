@@ -7,7 +7,8 @@ export const Nav = () => {
     return (
         <nav>
             <h1>
-              <Link to="/home">My Book App</Link>
+                <Link to="/home">My Book App</Link>
+
             </h1>
 
             <ul>

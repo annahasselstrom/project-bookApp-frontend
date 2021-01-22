@@ -19,16 +19,14 @@ export const Routing = () => {
  
     <BrowserRouter>
       <main>
-        <Switch>
-            {!accessToken && <Route path="/" exact component={Login} />}
-            {accessToken && (
-            <>                  
-              <Nav />
+        {!accessToken && <Route path="/" exact component={Login} />}
+        {accessToken && (
+        <>                  
+          <Nav />
+          <HomePage />
+            <Switch>
               <Route path="/logout" exact>
                 <Logout />
-              </Route>
-              <Route path="/home" exact>
-                <HomePage />
               </Route>
               <Route path="/lists" exact>
                 <ListsList />
@@ -39,10 +37,10 @@ export const Routing = () => {
               <Route path="/foryou" exact>
                 <ForYou />
               </Route>
+            </Switch>
               <Footer />
             </>    
-            )}
-        </Switch>
+        )}
       </main>  
     </BrowserRouter>
   )

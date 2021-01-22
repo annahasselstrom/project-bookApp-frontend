@@ -35,8 +35,6 @@ export const HomePage = () => {
     const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${API_KEY}`;
     console.log(API_URL)
     
-    
-
     const handleChange = (event) => {
         const book = event.target.value;
         setBook(book); //state variable, from input field
