@@ -1,0 +1,26 @@
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a.active {
+  color: red;
+  text-decoration: none;
+}

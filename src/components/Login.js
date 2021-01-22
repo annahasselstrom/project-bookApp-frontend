@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, Route } from 'react-router-dom';
 
 import { user } from "../reducers/user";
 
 import { HomePage } from "components/HomePage";
+import { Nav } from "components/Nav";
+import { Footer } from "components/Footer";
+import { ListsList } from "components/ListsList";
 
 const SIGNUP_URL = "https://project-signup.herokuapp.com/users";
 //"http://localhost:8080/users";
@@ -98,8 +102,8 @@ export const Login = () => {
 
   // If the user is successfully created
   if (accessToken) {
-      return (
-          <HomePage />
+    return (
+      <HomePage /> //how reach /home ?
       )
   }
 
@@ -127,7 +131,7 @@ export const Login = () => {
         />
         <div className="button-container">
           <button type="submit" onClick={handleSignup}>
-            Sign up
+              Sign up
           </button>
           <button type="submit" onClick={handleLogin}>
             Login
