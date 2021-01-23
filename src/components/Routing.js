@@ -10,6 +10,7 @@ import { Login } from "./Login";
 import { ForYou } from "./ForYou";
 import { HomePage } from "./HomePage";
 import { Logout } from "./Logout";
+import { SurpriseMe } from "./SurpriseMe";
 
 export const Routing = () => {
 
@@ -19,11 +20,13 @@ export const Routing = () => {
  
     <BrowserRouter>
       <main>
+        {/*}
         {!accessToken && <Route path="/" exact component={Login} />}
-        {accessToken && (
+  {accessToken && ( */}
         <>                  
           <Nav />
           <HomePage />
+          <SurpriseMe />
             <Switch>
               <Route path="/logout" exact>
                 <Logout />
@@ -31,16 +34,16 @@ export const Routing = () => {
               <Route path="/lists" exact>
                 <ListsList />
               </Route>
-              <Route path="bookdetails" exact>
+              <Route path="/title/:bookId" exact>
                 <BookDetails />
               </Route>
               <Route path="/foryou" exact>
                 <ForYou />
               </Route>
             </Switch>
-              <Footer />
+          <Footer />
             </>    
-        )}
+        {/*})}*/}
       </main>  
     </BrowserRouter>
   )

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { user } from "../reducers/user";
 
@@ -33,7 +34,7 @@ export const HomePage = () => {
 
     const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
     const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${API_KEY}`;
-    console.log(API_URL)
+   //console.log(API_URL)
     
     const handleChange = (event) => {
         const book = event.target.value;
@@ -46,23 +47,26 @@ export const HomePage = () => {
         fetch(API_URL)
             .then((res) => res.json())
             .then(data => {
+                //console.log(data.items)
                 setResult(data.items);
     })
             
     };
-
+    {/*}
     const handleLogout = (event) => {
         event.preventDefault();
     
         dispatch(user.actions.logout());
         dispatch(user.actions.setStatusMessage({ statusMessage: "Logged out!" }));
       };
+    */}
     return (
         <>
+            {/*}
             <button type="submit" onClick={handleLogout}>
-                  Logout
+                Logout
         </button>
-            <h1>Books</h1>
+    */}
             <form onSubmit={handleSubmit}>
             <input
                 type="text"
@@ -77,11 +81,19 @@ export const HomePage = () => {
             </form>
             {result.map(book => (
                 <>
-                    <p>{book.volumeInfo.title}</p>
-                <a target="_blank" rel="noopener noreferrer" href={book.volumeInfo.previewLink} key={book.id} >
-                    
-                    <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} key={book.id} />
-                </a>
+                    <Link to={`/title/${book.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={book.volumeInfo.previewLink}
+                        key={book.id}>
+                        <img
+                            src={book.volumeInfo.imageLinks.thumbnail}
+                            alt={book.volumeInfo.title}
+                            key={book.id} />
+                        <p>{book.volumeInfo.title}</p>
+                        <p>{book.volumeInfo.authors}</p>
+                        <p>{book.volumeInfo.averageRating}</p>
+                    </Link>
                 </>
             ))}        
     </>

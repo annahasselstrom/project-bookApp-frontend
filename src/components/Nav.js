@@ -2,15 +2,14 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import { nav } from './nav.css';
+import { Logout } from './Logout';
 
 export const Nav = () => {
     return (
         <nav>
             <h1>
                 <Link to="/home">My Book App</Link>
-
             </h1>
-
             <ul>
                 <li>
                  <NavLink to="/foryou">For you</NavLink>
@@ -19,9 +18,9 @@ export const Nav = () => {
                   <NavLink to="/lists">Lists</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/logout">Logout</NavLink>
+                  <Logout />
                 </li>
-          </ul>
+            </ul>
         </nav>
     )
 };
