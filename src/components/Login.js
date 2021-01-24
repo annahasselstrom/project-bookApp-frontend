@@ -104,7 +104,7 @@ export const Login = () => {
   }
 
   return (
-    <section>
+    <section className="signup">
       <form>
         <h1>Sign Up/Login</h1>
         <label> Name: </label>

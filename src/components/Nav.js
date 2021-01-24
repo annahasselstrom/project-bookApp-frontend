@@ -7,9 +7,9 @@ import { Logout } from './Logout';
 export const Nav = () => {
     return (
         <nav>
-            <h1>
+            <h3>
                 <Link to="/home">My Book App</Link>
-            </h1>
+            </h3>
             <ul>
                 <li>
                  <NavLink to="/foryou">For you</NavLink>

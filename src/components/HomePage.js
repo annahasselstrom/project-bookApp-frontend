@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { user } from "../reducers/user";
+import { SurpriseMe } from "./SurpriseMe";
 
 
 
@@ -62,12 +63,7 @@ export const HomePage = () => {
     */}
     return (
         <>
-            {/*}
-            <button type="submit" onClick={handleLogout}>
-                Logout
-        </button>
-    */}
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 onChange={handleChange}
@@ -78,9 +74,12 @@ export const HomePage = () => {
                 type="submit">
                     Search
             </button>
-            </form>
-            {result.map(book => (
-                <>
+            </form >
+            <SurpriseMe />
+            <div className="card-wrap-outer">
+              <div className="card-wrap-inner">
+                {result.map(book => (
+                <div className="card">
                     <Link to={`/title/${book.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -93,10 +92,13 @@ export const HomePage = () => {
                         <p>{book.volumeInfo.title}</p>
                         <p>{book.volumeInfo.authors}</p>
                         <p>{book.volumeInfo.averageRating}</p>
+                        <div className="flexible"></div>
                     </Link>
-                </>
-            ))}        
-    </>
+                </div>    
+                ))}   
+              </div>
+            </div>
+        </>
     );
 };
 

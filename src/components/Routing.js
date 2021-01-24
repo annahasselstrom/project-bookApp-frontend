@@ -22,11 +22,11 @@ export const Routing = () => {
       <main>
         {/*}
         {!accessToken && <Route path="/" exact component={Login} />}
-  {accessToken && ( */}
+        {accessToken && ( */}
         <>                  
           <Nav />
           <HomePage />
-          <SurpriseMe />
+          {/*<SurpriseMe />*/}
             <Switch>
               <Route path="/logout" exact>
                 <Logout />

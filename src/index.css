@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -23,9 +25,10 @@ main {
   justify-content: center;
   flex-direction: column;
   margin-top: 40px;
+  width: 400px;
 }
 
-section {
+.signup {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -34,6 +37,32 @@ section {
 h1 {
   color: white;
   font-size: 25px;
+}
+
+/* HomePage */
+.card-wrap-outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 400px;
+}
+
+.card-wrap-inner {
+  display: flex;
+  flex-direction: row;
+  width: 33.33%;
+}
+
+.flexible {
+  flex-grow: 1;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 2px solid black;
+
 }
 
 /* Form styling */
