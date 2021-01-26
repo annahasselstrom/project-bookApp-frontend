@@ -7,6 +7,7 @@ import { Routing } from "./components/Routing"
 import { user } from "./reducers/user";
 
 const reducer = combineReducers({ user: user.reducer });
+// CHANGE ABOVE CODE combineReducers({ user, favorite })
 const store = configureStore({ reducer });
 
 export const App = () => {

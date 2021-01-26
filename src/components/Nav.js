@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import { nav } from './nav.css';
 import { Logout } from './Logout';
+import { nav } from './nav.css';
 
 export const Nav = () => {
     return (
         <nav>
-            <h3>
-                <Link to="/home">My Book App</Link>
-            </h3>
             <ul>
                 <li>
-                 <NavLink to="/foryou">For you</NavLink>
+                  <NavLink to="/home">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/foryou">For you</NavLink>
                 </li>
                 <li>
                   <NavLink to="/lists">Lists</NavLink>

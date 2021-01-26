@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom';
 
 import { user } from "../reducers/user";
 
-import { HomePage } from "components/HomePage";
-
-const SIGNUP_URL = "https://project-signup.herokuapp.com/users";
-//"http://localhost:8080/users";
-const LOGIN_URL = "https://project-signup.herokuapp.com/sessions";
-//"http://localhost:8080/sessions";
+const SIGNUP_URL = "http://localhost:8080/users";
+const LOGIN_URL = "http://localhost:8080/sessions";
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   //Using useSelector to access data from the redux store
   const accessToken = useSelector((store) => store.user.login.accessToken);
   const messageToUser = useSelector((store) => store.user.login.statusMessage);
@@ -22,6 +21,7 @@ export const Login = () => {
 
   // Sending the response from the fetches for both the SIGNUP_URL & LOGIN_URL to the redux store if the fetch was successful
   const handleLoginSuccess = (loginResponse) => {
+    //localStorage.setItem('accessToken', loginResponse.accessToken);
     dispatch(
       user.actions.setAccessToken({ accessToken: loginResponse.accessToken })
     );
@@ -35,8 +35,7 @@ export const Login = () => {
   // If the fetch wasn't successful, because the user didn't give valid name or password when signing up or a when logging in the data sent didn't match was is stored in the database for that user e.g. name and password, then the access token is set to null and status message is that's returned in the json is sent to the redux store 
   const handleLoginFailed = (error) => {
     dispatch(user.actions.setAccessToken({ accessToken: null }));
-    dispatch(user.actions.setStatusMessage({ statusMessage: error.toString() }))
-    ;
+    dispatch(user.actions.setStatusMessage({ statusMessage: error.toString() }));
   };
 
   /* Handle sign up:
@@ -96,12 +95,11 @@ export const Login = () => {
       });
   };
 
-  // If the user is successfully created
-  if (accessToken) {
-    return (
-      <HomePage /> //how reach /home ?
-      )
-  }
+  useEffect(() => {
+    if (accessToken) {
+      history.push("/home")
+    }
+  }, [history, accessToken]);
 
   return (
     <section className="signup">
