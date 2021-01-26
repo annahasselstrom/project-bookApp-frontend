@@ -13,33 +13,30 @@ import { HomePage } from "../pages.js/HomePage";
 //import { SurpriseMe } from "./SurpriseMe";
 
 export const Routing = () => {
-    const accessToken = useSelector(store => store.user.login.accessToken);
+  const accessToken = useSelector(store => store.user.login.accessToken);
   
   return (
     <BrowserRouter>
       <main>
-                <>                  
-                
+        <>
           <Nav />
-
           {/*<SurpriseMe />*/}
           <Switch>
             <Route path="/" exact component={Login} />
             {accessToken}
-
-              <Route path="/home" exact>
-                <HomePage />
-              </Route>
-              <Route path="/lists" exact>
-                <ListsList />
-              </Route>
-              <Route path="/title/:bookId" exact>
-                <BookDetails />
-              </Route>
-              <Route path="/foryou" exact>
-                <ForYou />
-              </Route>
-            </Switch>
+            <Route path="/home" exact>
+              <HomePage />
+            </Route>
+            <Route path="/lists" exact>
+              <ListsList />
+            </Route>
+            <Route path="/title/:bookId" exact>
+              <BookDetails />
+            </Route>
+            <Route path="/foryou" exact>
+              <ForYou />
+            </Route>
+          </Switch>
           <Footer />
             </>    
       </main>  

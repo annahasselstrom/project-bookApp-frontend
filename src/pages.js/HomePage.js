@@ -89,13 +89,7 @@ export const HomePage = () => {
                             <p>{book.volumeInfo.authors}</p>
                     </Link>
                         {/*<p>Rating {book.volumeInfo.averageRating}</p>*/}
-                        <div className="container-favorite-button">
-                            <button className="favorite-button">
-                              <span className="heart" role="img" aria-label="Heart">
-                                    +
-                              </span>
-                              </button>
-                        </div>
+                        
                 </div>    
                 ))}   
               </div>
