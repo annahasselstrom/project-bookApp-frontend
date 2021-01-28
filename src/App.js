@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 import { Routing } from "./components/Routing"
+import { Card } from "./lib/Card";
 
 import { user } from "./reducers/user";
 

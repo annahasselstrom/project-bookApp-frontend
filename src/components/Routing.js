@@ -2,13 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import { ListsList } from "../pages.js/ListsList";
+import { Browse } from "../pages.js/Browse";
 import { BookDetails } from "../pages.js/BookDetails";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer"
 import { Login } from "../pages.js/Login";
-import { ForYou } from "../pages.js/ForYou";
+//import { Favorites } from "../pages.js/Favorites";
 import { HomePage } from "../pages.js/HomePage";
+
 //import { Logout } from "./Logout";
 //import { SurpriseMe } from "./SurpriseMe";
 
@@ -29,14 +30,19 @@ export const Routing = () => {
               <HomePage />
             </Route>
             <Route path="/lists" exact>
-              <ListsList />
+              <Browse />
             </Route>
             <Route path="/title/:bookId" exact>
               <BookDetails />
             </Route>
-            <Route path="/foryou" exact>
-              <ForYou />
+            <Route path="/browse" exact>
+              <Browse />
             </Route>
+            {/*
+            <Route path="/favorites" exact>
+              <Favorites />
+            </Route>
+             */}
           </Switch>
           <Footer />
             </>    

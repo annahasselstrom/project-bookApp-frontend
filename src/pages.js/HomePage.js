@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 
 import { SurpriseMe } from "../components/SurpriseMe";
+import { Card } from "../lib/Card";
+import { Browse } from "./Browse";
 
 // base
 //const API_URL = `https://www.googleapis.com/books/v1/volumes?q="${inputValue}"&langRestrict=us&key=${API_KEY}`;
@@ -74,60 +76,30 @@ export const HomePage = () => {
                     Search
             </button>
             </form >
-            <SurpriseMe />
-
-            <section className="card-wrap-outer">
-              <div className="card-wrap-inner">
-                {result.map(book => (
-                <div className="card">
+        <SurpriseMe />
+            <section>
+              <div>
+            {result.map(book => (
+                  <>
                     <Link to={`/title/${book.id}`}
                         key={book.id}>
-                        <img
-                            src={book.volumeInfo.imageLinks.thumbnail}
-                            alt={book.volumeInfo.title}
-                            key={book.id} />
-                        <p>{book.volumeInfo.title}</p>
-                            <p>{book.volumeInfo.authors}</p>
-                    </Link>
-                        {/*<p>Rating {book.volumeInfo.averageRating}</p>*/}
-                        
-                </div>    
-                ))}   
-              </div>
-            </section>
-
-            <section className="list-container">
-                <section className="card-wrap-outer">
-                    <div className="card-wrap-inner">
-                      <div className="list-card">
-                        <p>List 1</p>
-                      </div>
-                    </div>
-                </section>
-                    
-                <section className="card-wrap-outer">
-                    <div className="card-wrap-inner">
-                      <div className="list-card">
-                        <p>List 2</p>
-                      </div>
-                    </div>
-                </section>
-                        
-                <section className="card-wrap-outer">
-                    <div className="card-wrap-inner">
-                      <div className="list-card">
-                        <p>List 3</p>
-                      </div>
-                    </div>
-                </section>
-
-                <section className="card-wrap-outer">
-                    <div className="card-wrap-inner">
-                      <div className="list-card">
-                        <p>List 4</p>
-                      </div>
-                    </div>
-                </section>
+                  <Card 
+                      thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                      alt={book.volumeInfo.title}
+                      title={book.volumeInfo.title}
+                      subtitle={book.volumeInfo.subtitle}
+                      authors={book.volumeInfo.authors}
+                      averageRating={book.volumeInfo.averageRating}
+                      />
+                  </Link>
+                  <Card 
+                  title={book.volumeInfo.title}
+                  subtitle={book.volumeInfo.subtitle}
+                />
+                </>
+                ))}  
+          </div>
+          <Browse />
         </section>
         </>
     );
