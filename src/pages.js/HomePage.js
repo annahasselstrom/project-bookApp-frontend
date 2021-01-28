@@ -25,7 +25,7 @@ import { SurpriseMe } from "../components/SurpriseMe";
 
 
 export const HomePage = () => {
-    const [book, setBook] = useState('');
+  const [book, setBook] = useState('');
   const [result, setResult] = useState([]);
   const history = useHistory();
   const accessToken = useSelector((store) => store.user.login.accessToken);
@@ -47,18 +47,19 @@ export const HomePage = () => {
         fetch(API_URL)
             .then((res) => res.json())
             .then(data => {
-                //console.log(data.items)
+                //   console.log(data.items)
                 setResult(data.items);
             })
             .catch((error) => console.log(error))
     };
+  {/*}
   
-    useEffect(() => {
+  useEffect(() => {
       if (!accessToken) {
-        history.push("/")
+        history.push("/home")
       }
     }, [history, accessToken]);
-
+  */}
     return (
         <>
           <form onSubmit={handleSubmit}>

@@ -20,6 +20,7 @@ export const BookDetails = () => {
       .catch((error) => console.log(error))
   }, [bookId]);
   
+  
   // Create PATCH to add book to fav list
   const handleChange = (event) => {
     const bookId = event.target.value;
@@ -36,7 +37,7 @@ export const BookDetails = () => {
       })
       //.catch((error) => console.log(error))
   };
-   
+
     return (
     <>
       <h1>Book Details</h1>

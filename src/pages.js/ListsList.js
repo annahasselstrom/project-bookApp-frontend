@@ -26,17 +26,21 @@ export const ListsList = () => {
         event.preventDefault();
         fetch(API_URL_YOUNG)
             .then((res) => res.json())
-            .then(data => {
-                setResult(data.items);
+          .then(data => {
+            //console.log(data.items)
+            setResult(data.items);
             })
             .catch((error) => console.log(error))
     };
     
+  /*
     useEffect(() => {
         if (!accessToken) {
           history.push("/")
         }
-      }, [history, accessToken]);
+    }, [history, accessToken]);
+  */
+  
     //map and output
     return (
         <>

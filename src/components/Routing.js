@@ -22,8 +22,9 @@ export const Routing = () => {
           <Nav />
           {/*<SurpriseMe />*/}
           <Switch>
+            {/*}
             <Route path="/" exact component={Login} />
-            {accessToken}
+  */}
             <Route path="/home" exact>
               <HomePage />
             </Route>

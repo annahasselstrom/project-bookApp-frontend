@@ -94,13 +94,13 @@ export const Login = () => {
         setPassword("");
       });
   };
-
+/*
   useEffect(() => {
     if (accessToken) {
       history.push("/home")
     }
   }, [history, accessToken]);
-
+*/
   return (
     <section className="signup">
       <form>
