@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Card } from "../lib/Card";
@@ -13,7 +13,7 @@ export const Architecture = () => {
     const [result, setResult] = useState([]);
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
-  const API_URL_ANT = `https://www.googleapis.com/books/v1/volumes?q=subject:'architecture'&langRestrict="fr"&key=${API_KEY}`;
+  const API_URL = `https://www.googleapis.com/books/v1/volumes?q=subject:'architecture'&langRestrict="fr"&key=${API_KEY}`;
  
     const handleChange = (event) => {
         const list = event.target.value;
@@ -22,7 +22,7 @@ export const Architecture = () => {
    
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(API_URL_ANT)
+        fetch(API_URL)
             .then((res) => res.json())
           .then(data => {
             //console.log(data.items)
@@ -50,10 +50,11 @@ export const Architecture = () => {
             </form>
 
             {result.map(book => (
-                <>
+              <>
+                <Link to={`/title/${book.id}`}
+                        key={book.id}>
                   <a key={book.id}> 
                     <Card
-
                       thumbnail={book.volumeInfo.imageLinks.thumbnail}
                       alt={book.volumeInfo.title}
                       title={book.volumeInfo.title}
@@ -61,7 +62,8 @@ export const Architecture = () => {
                       authors={book.volumeInfo.authors}
                       averageRating={book.volumeInfo.averageRating}
                     />
-                </a>
+                  </a>
+                  </Link>
                     </>
             ))}     
         </>

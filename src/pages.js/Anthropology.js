@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Card } from "../lib/Card";
@@ -14,11 +14,12 @@ export const Anthropology = () => {
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const API_URL_ANT = `https://www.googleapis.com/books/v1/volumes?q=subject:'anthropology'&langRestrict="fr"&key=${API_KEY}`;
  
+  {/*
     const handleChange = (event) => {
         const list = event.target.value;
       setList(list); //state variable, from button
     };
-   
+  */}
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch(API_URL_ANT)
@@ -39,17 +40,21 @@ export const Anthropology = () => {
   */
   
     //map and output
+    //onChange={handleChange}
     return (
       <>
             <form onSubmit={handleSubmit}>
             <SubjectButton
-                type="submit" onChange={handleChange}
+                type="submit" 
                 title="Anthropology">
             </SubjectButton>
             </form>
 
             {result.map(book => (
-                <>
+              <>
+                <Link to={`/title/${book.id}`}
+                        key={book.id}>
+
                   <a key={book.id}> 
                     <Card
                       thumbnail={book.volumeInfo.imageLinks.thumbnail}
@@ -59,7 +64,8 @@ export const Anthropology = () => {
                       authors={book.volumeInfo.authors}
                       averageRating={book.volumeInfo.averageRating}
                     />
-                </a>
+                  </a>
+                  </Link>
                     </>
             ))}     
         </>

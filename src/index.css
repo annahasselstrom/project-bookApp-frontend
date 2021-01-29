@@ -131,11 +131,6 @@ img {
   justify-content: space-around;
 }
 
-.list-card-inner {
-
-}
-
-
 .list-card {
     display: flex;
     flex-direction: row;
