@@ -1,16 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-// initialState
+const initialState = {
+    list: {
+        name: 'List',
+        items: []
+    }
+};
 
 export const favorite = createSlice({
     name: 'favorite',
-    initialState: {
-        all: []
-    }, 
+    initialState: initialState,
     reducers: {
-        setFavorites: (state, action) => {
+        addFavorite: (state, action) => {
+            const itemInfo = action.payload;
+            state.list.items.push(itemInfo);
         }
-    }
+    },
+
+      removeFavorite: (state, action) => { 
+        
+    },
+    
+      clearAll: () => {
+        return initialState // Does not need a state or action(payload)
+      }
+
     
 });

@@ -1,65 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+
+import { Card } from "../lib/Card";
 
 //import { user } from "../reducers/user";
  
 export const SurpriseMe = () => {
-  const [result, setResult] = useState([]);
-  const [item, setItem] = useState({})
+  const [book, setBook] = useState();
+  //const [item, setItem] = useState({})
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
-  const API_URL = `https://www.googleapis.com/books/v1/volumes?q=subject:'art'&langRestrict="fr"&key=${API_KEY}`;
+  const API_URL = `https://www.googleapis.com/books/v1/volumes?q=subject:'design'&langRestrict="fr"&max-results=50&key=${API_KEY}`;
  
+  console.log(API_URL)
   //console.log(API_URL_ANT)
-  //console.log(API_URL_YOUNG);
-
-  const handleChange = (event) => {
-    const randomBook = event.target.value;
-    //setRandomBook(randomBook); //state variable, from button
-  };
-   
+  /*
+    const handleChange = (event) => {
+      const randomBook = event.target.value;
+      //setRandomBook(randomBook); //state variable, from button
+    };
+    */
   const handleSubmit = (event) => {
     event.preventDefault();
 
     fetch(API_URL)
       .then((res) => res.json())
       .then(data => {
-        //console.log(data.items)
-        setResult(data.items)
+        setBook(data.items[Math.floor(Math.random() * data.items.length)].volumeInfo)
       })
       .catch((error) => console.log(error))
-  }; 
-    
-  const randomResult = () => {
-    return result[Math.floor(Math.random() * result.length)]
   };
-
-  console.log(randomResult());
-
+  
+  console.log(book);
   return (
     <>
       <form onSubmit={handleSubmit}>
-      <button
-        onChange={handleChange}
-        type="submit">
-        Surprise me!
+        <button
+          onChange
+          type="submit">
+          Surprise me!
       </button>
       </form>
-      <div>Surprise book should be here!
-        <div>
-          
-        {Object.entries(randomResult).map((entry) =>
-          <p>{entry[0]} : {entry[1]}</p>
-          )}
-        </div>
-      </div>
-      </>
+      
+      {/*<Link to={`/title/${book.id}`}>*/}
+
+      {book && <Card
+        
+        thumbnail={book && book.imageLinks.thumbnail}
+        title={book && book.title}
+        subtitle={book && book.subtitle}
+        authors={book && book.authors}
+        averageRating={book && book.averageRating}
+        />}
+        {/*</Link>*/}
+          </>
     )
 };
-
-/*
-{Object.entries(randomResult).map((entry) =>
-      <p>{entry[0]} : {entry[1]}</p>
-  )}
-  */

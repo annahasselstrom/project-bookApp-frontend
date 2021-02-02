@@ -5,7 +5,8 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: darkgray;
+  background-color: #ffad4f;
+  box-sizing: border-box;
 }
 
 code {
@@ -158,6 +159,7 @@ form {
   justify-content: flex-start;
   padding: 10px;
   width: 80%;
+  
 }
 
 label {
@@ -167,12 +169,17 @@ label {
 
 input {
   margin-bottom: 10px;
-  background-color: pink;
+  background-color: #D02D23;
   border: none;
-  border-bottom: 2px solid white;
-  padding: 5px 0px;
+  /*border-bottom: 2px solid white;*/
+  padding: 5px 3px;
+  padding-left: 10px;
   color: white;
   font-size: 18px;
+  border-radius: 8px;
+  width: 80%;
+  align-self: center;
+
 }
 
 input::placeholder {
@@ -180,6 +187,7 @@ input::placeholder {
   color: white;
 }
 
+/*
 input:valid {
   border-bottom: 3px solid rgb(177, 238, 193);
 }
@@ -187,6 +195,7 @@ input:valid {
 input:invalid {
   border-bottom: 3px solid #f77676;
 }
+*/
 
 .user-message {
   color: #f55e5e;
@@ -209,7 +218,7 @@ p {
 
 button {
   margin: 10px;
-  background-color: pink;
+  background-color: #E6BC;
   border: 2px solid white;
   border-radius: 30px;
   padding: 10px;

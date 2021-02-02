@@ -2,13 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import { Browse } from "../pages.js/Browse";
-import { BookDetails } from "../pages.js/BookDetails";
+import { Browse } from "../pages/Browse";
+import { BookDetails } from "../pages/BookDetails";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer"
-import { Login } from "../pages.js/Login";
-//import { Favorites } from "../pages.js/Favorites";
-import { HomePage } from "../pages.js/HomePage";
+import { Login } from "../pages/Login";
+import { Favorites } from "../pages/Favorites";
+import { HomePage } from "../pages/HomePage";
 
 //import { Logout } from "./Logout";
 //import { SurpriseMe } from "./SurpriseMe";
