@@ -53,7 +53,8 @@ export const HomePage = () => {
   */}
 
     return (
-        <>
+      <>
+        <section className="main-container">
           <form onSubmit={handleSubmit}>
             <input
                 type="text"
@@ -67,6 +68,8 @@ export const HomePage = () => {
             </button>
             </form >
           <SurpriseMe />
+        </section>
+        
             <section>
               <div>
             {result.map(book => (

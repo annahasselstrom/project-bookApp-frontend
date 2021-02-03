@@ -26,7 +26,7 @@ export const Browse = () => {
 `
   return (
     <>
-      <h1>Browse subjects</h1>
+      <h1 className="browse">Browse subjects</h1>
       <Container>
         <Anthropology />
         <Philosophy />

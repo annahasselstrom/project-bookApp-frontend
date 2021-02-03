@@ -23,7 +23,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 5px;
 }
 
 .signup {
@@ -38,91 +38,31 @@ h1 {
   font-size: 25px;
 }
 
+/* Logout button */
+.logout-button {
+  font-size: 16px;
+  border: none;
+  padding: 8px;
+  font-weight: 300;
+  width:fit-content;
+  
+}
+
 /* HomePage */
-.card-wrap-outer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
-.card-wrap-inner {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /*width: 33.33%;*/
+.main-container {
+  background-image: url("./assets/forestBook.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  justify-content: space-around;
-}
-
-
-.card {
-  display: flex;
+  height: 520px;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  /*width: 100%;*/
-  width: 45%;
-  border: 1px solid grey;
-  margin-top: 10px;
-  justify-content: center;
-
+  margin: auto;
 }
 
-.card p {
-  text-align: left;
-  margin: 20px;
-  font-size: 14px;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-
-/* BookDetail */
-.card-wrap-outer-detail {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 40px;
-}
-
-.card-wrap-inner-detail {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /*width: 33.33%;*/
-  width: 100%;
-  justify-content: space-around;
-}
-
-.card-detail {
-  display: flex;
-  flex-direction: row;
-  /*width: 100%;*/
-  width: 80%;
-  border: 1px solid grey;
-  margin-top: 10px;
-  justify-content: center;
-  padding: 20px;
-
-}
-
-.card-detail p {
-  text-align: left;
-}
-
-.card-detail:last-child {
-  display: inline-block;
-  width: 100%;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
 
 /* ListsList */
 .list-container {
@@ -132,28 +72,10 @@ img {
   justify-content: space-around;
 }
 
-.list-card {
-    display: flex;
-    flex-direction: row;
-    /*width: 100%;*/
-    width: 80%;
-    border: 1px solid grey;
-    margin-top: 10px;
-    justify-content: center;
-    padding: 20px;
-    margin: 10px;
-  
-  }
-  
-  .list-card p {
-    text-align: left;
-  }
-
-
-
 /* Form styling */
 form {
   display: flex;
+  margin: auto;
   flex-direction: column;
   align-items: space-between;
   justify-content: flex-start;
@@ -168,8 +90,9 @@ label {
 }
 
 input {
-  margin-bottom: 10px;
-  background-color: #D02D23;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  background-color: #d4295e;
   border: none;
   /*border-bottom: 2px solid white;*/
   padding: 5px 3px;
@@ -177,14 +100,17 @@ input {
   color: white;
   font-size: 18px;
   border-radius: 8px;
-  width: 80%;
+  width: 70%;
   align-self: center;
+  
 
 }
 
 input::placeholder {
   font-size: 16px;
   color: white;
+  opacity: .7;
+  text-align: center;
 }
 
 /*
@@ -208,16 +134,12 @@ p {
   text-align: center;
 }
 
-.material-icons {
-  color: white;
-  margin: auto;
-  font-size: 60px;
-}
-
 /* Button styling */
 
 button {
-  margin: 10px;
+  margin-top: 10px;
+  margin: auto;
+  width: 80%;
   background-color: #E6BC;
   border: 2px solid white;
   border-radius: 30px;
@@ -226,17 +148,14 @@ button {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  background: -webkit-linear-gradient(#eee, white);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
-/* Logout button */
-.logout-button {
-  font-size: 14px;
-}
-
-.favorite-button {
-  font-size: 14px;
-  display: inline-block;
-  padding: 5px;
+.browse {
+  margin-top: 40px;
+  color: #698a7e;
 }
 
 
