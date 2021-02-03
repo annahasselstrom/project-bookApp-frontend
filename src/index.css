@@ -136,11 +136,11 @@ p {
 
 /* Button styling */
 
-button {
+
+.search-button, .surprise-button {
   margin-top: 10px;
   margin: auto;
   width: 80%;
-  background-color: #E6BC;
   border: 2px solid white;
   border-radius: 30px;
   padding: 10px;
@@ -156,6 +156,10 @@ button {
 .browse {
   margin-top: 40px;
   color: #698a7e;
+}
+
+.details-text-arrow {
+  visibility: hidden;
 }
 
 

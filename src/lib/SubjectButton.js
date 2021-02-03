@@ -3,9 +3,9 @@ import styled from 'styled-components/macro';
 
 const Container = styled.button`
   padding: 20px;
+  width: 100%;
   border-radius: 6px;
   border: black;
-  margin: 10px;
   background: white;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 `

@@ -62,7 +62,7 @@ export const HomePage = () => {
                 placeholder="Search for Books"
                 id="book">
             </input>
-            <button
+            <button className="search-button"
                 type="submit">
                     Search
             </button>

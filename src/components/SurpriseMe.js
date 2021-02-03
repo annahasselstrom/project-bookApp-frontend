@@ -37,7 +37,7 @@ export const SurpriseMe = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <button
+        <button className="surprise-button"
           onChange
           type="submit">
           Surprise me!
