@@ -22,14 +22,18 @@ a {
 
 a.active {
   text-decoration: none;
-  border-bottom: 1px solid #d4295e;
+  border-bottom: 1px solid #ffd94f;
 }
 
 h1 a {
-  color: #d4295e;
+  /*color: #ffad4f;*/
+  color: #ffd94f;
+  margin-right: 24px;
+  font-size: 30px;
 }
 
 h1 a.active {
-    color: #d4295e;
+    /*color: #ffad4f;*/
+    color: #ffd94f;
     border-bottom: none;
   }

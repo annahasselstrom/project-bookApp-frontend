@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { favorite } from '../reducers/favorite';
+import { Card } from 'lib/Card';
 
 
 export const Favorites = () => {
@@ -26,7 +27,12 @@ export const Favorites = () => {
     */}
 
     return (
-        <h1>For you</h1>
+        <>
+        <h1 className="favorite">Favorite Books</h1>
+        <Card
+            title="Really?! Not even one favorite book?"
+        />
+        </>
         
     
     

@@ -38,11 +38,11 @@ export const Routing = () => {
             <Route path="/browse" exact>
               <Browse />
             </Route>
-            {/*
+            
             <Route path="/favorites" exact>
               <Favorites />
             </Route>
-             */}
+             
           </Switch>
           <Footer />
             </>    

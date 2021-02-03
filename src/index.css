@@ -5,7 +5,8 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffad4f;
+  /*background-color: #4ea489;*/
+  background-color: #768a89;
   box-sizing: border-box;
 }
 
@@ -42,10 +43,10 @@ h1 {
 .logout-button {
   font-size: 16px;
   border: none;
-  padding: 8px;
+  padding: 6px;
   font-weight: 300;
   width:fit-content;
-  
+  border-radius: 4px;
 }
 
 /* HomePage */
@@ -92,18 +93,18 @@ label {
 input {
   margin-bottom: 20px;
   margin-top: 50px;
-  background-color: #d4295e;
+  /*background-color: #a45c4e;*/
+  background-color: #ffad4f;
+  /*background-color: #80768a;*/
   border: none;
   /*border-bottom: 2px solid white;*/
   padding: 5px 3px;
   padding-left: 10px;
   color: white;
   font-size: 18px;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 70%;
   align-self: center;
-  
-
 }
 
 input::placeholder {
@@ -141,21 +142,37 @@ p {
   margin-top: 10px;
   margin: auto;
   width: 80%;
-  border: 2px solid white;
+  border: 3px solid  white;
   border-radius: 30px;
   padding: 10px;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 700;
   cursor: pointer;
   background: -webkit-linear-gradient(#eee, white);
    -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+   -webkit-text-fill-color: white;
 }
+
+.favorite, .book-details {
+  color: #4a716f;
+  color: #ffd94f;
+  color: #ffad4f;
+  font-size: 36px;
+}
+
+
 
 .browse {
   margin-top: 40px;
-  color: #698a7e;
+  /*color: #a44e5b;*/
+  /*color: #a44e86*/
+  /*color: #6c4ea4;*/
+  /*color: #ffad4f;*/
+  /*color: #ffd94f;*/
+  color: #ff4f9b;
+  color: #ffd94f;
+  color: #ffad4f;
+  font-size: 36px;
 }
 
 .details-text-arrow {
@@ -167,4 +184,18 @@ p {
 .status {
   color: white;
   font-size: 18px;
+}
+
+
+/* Footer */
+footer p {
+  margin: 6px;
+}
+
+footer p:first-child {
+  margin-top: 30px;
+}
+
+footer p:last-child {
+  margin-bottom: 30px;
 }

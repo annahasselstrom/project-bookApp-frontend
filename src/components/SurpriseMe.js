@@ -40,7 +40,7 @@ export const SurpriseMe = () => {
         <button className="surprise-button"
           onChange
           type="submit">
-          Surprise me!
+          Surprise Me!
       </button>
       </form>
       
