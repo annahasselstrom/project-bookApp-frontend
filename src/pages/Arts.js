@@ -47,7 +47,9 @@ export const Arts = () => {
                 type="submit" onChange={handleChange}
                 title="Arts">
             </SubjectButton>
-            </form>
+        </form>
+        
+        <div className="container-browse-result">
 
             {result.map(book => (
               <>
@@ -66,7 +68,8 @@ export const Arts = () => {
                   </a>
                   </Link>
                     </>
-            ))}     
+            ))}  
+          </div>
         </>
     )
 };

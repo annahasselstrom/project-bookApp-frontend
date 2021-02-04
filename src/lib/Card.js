@@ -4,6 +4,12 @@ import styled from 'styled-components/macro';
 
 import { AddButton } from "./AddButton";
 
+const OuterContainer = styled.div`
+  display: flex;
+  flex-direction: wrap;
+  
+`
+
 const Container = styled.div`
   padding: 20px;
   border-radius: 6px;
@@ -11,6 +17,10 @@ const Container = styled.div`
   margin: 10px;
   background: white;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  @media (min-width: 768px) {
+    width: 400px;
+    justify-content: center;
+  }
 `
 
 const Title = styled.h1`
@@ -62,25 +72,36 @@ const Content = styled.div`
 `
 const Description = styled.div`
   font-size: 14px;
+  margin-top: 20px;
   `
-const Button = styled.button`
-padding: 15px;
+const StyledButton = styled.button`
 font-size: 14px;
-background-color: red;
+padding: 5px;
+background: red;
 `
-export const Card = ( { title, subtitle, authors, averageRating, thumbnail, description, button }) => (
-    
+
+  export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
+  <OuterContainer>
   <Container> 
       <TitleBar>
        {thumbnail && <Thumbnail url={thumbnail} />}
-      <Content>
-        {title && <Title>{title}</Title>}
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
-        {authors && <Authors>By {authors}</Authors>}
-        {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
-        {description && <Description>{description}</Description>}
+          <Content>
+            <div>
+              {button && <StyledButton>{button}</StyledButton>}
+              </div>
+            <div>
+              {title && <Title>{title}</Title>}
+              {subtitle && <Subtitle>{subtitle}</Subtitle>}
+              {authors && <Authors>By {authors}</Authors>}
+            </div>
+            <div>
+              {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
+            </div>
+            <div>
+              {description && <Description>{description}</Description>}
+            </div>
       </Content>
       </TitleBar>
   </Container>
-  
+  </OuterContainer>
 )

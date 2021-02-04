@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { favorite } from '../reducers/favorite';
 import { Card } from 'lib/Card';
+import { Nav } from "../components/Nav";
+
 
 
 export const Favorites = () => {
@@ -28,6 +30,7 @@ export const Favorites = () => {
 
     return (
         <>
+
         <h1 className="favorite">Favorite Books</h1>
         <Card
             title="Really?! Not even one favorite book?"

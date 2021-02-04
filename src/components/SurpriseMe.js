@@ -45,7 +45,7 @@ export const SurpriseMe = () => {
       </form>
       
       {/*<Link to={`/title/${book.id}`}>*/}
-
+<section className="surprise-me-card">
       {book && <Card
         
         thumbnail={book && book.imageLinks.thumbnail}
@@ -55,6 +55,7 @@ export const SurpriseMe = () => {
         averageRating={book && book.averageRating}
         />}
         {/*</Link>*/}
+        </section>
           </>
     )
 };

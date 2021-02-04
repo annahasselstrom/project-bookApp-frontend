@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 import { user } from "../reducers/user";
+import { Nav } from "../components/Nav";
+
 
 const SIGNUP_URL = "http://localhost:8080/users";
 const LOGIN_URL = "http://localhost:8080/sessions";
@@ -94,29 +96,33 @@ export const Login = () => {
         setPassword("");
       });
   };
-/*
-  useEffect(() => {
-    if (accessToken) {
-      history.push("/home")
-    }
-  }, [history, accessToken]);
-*/
+  /*
+    useEffect(() => {
+      if (accessToken) {
+        history.push("/home")
+      }
+    }, [history, accessToken]);
+  */
   return (
-    <section className="signup">
+    <>
+    <section className={"signup", "main-container"}>
       <form>
-        <h1>Sign Up/Login</h1>
-        <label> Name: </label>
+        <h1 className="signup-heading">Sign Up/Login</h1>
+        {/*<label className="input-name"> Name: </label>*/}
         <input
+          className="input-name"
           required
           minLength="5"
           maxLength="20"
+          placeholder="Username"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-        <label>Password:</label>
+        {/*<label className="input-password">Password:</label>*/}
         <input
+          className="input-password"
           type="password"
-          placeholder="Min length 5 characters"
+          placeholder="Password"
           required
           minLength="5"
           maxLength="20"
@@ -124,15 +130,18 @@ export const Login = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
         <div className="button-container">
+          <div>
           <button type="submit" onClick={handleSignup}>
-              Sign up
+              Sign Up
           </button>
           <button type="submit" onClick={handleLogin}>
-            Login
+              Login
           </button>
+          </div>
         </div>
         {!accessToken && <p className="user-message">{messageToUser}</p>}
           </form>
-    </section>
+      </section>
+      </>
   );
 };

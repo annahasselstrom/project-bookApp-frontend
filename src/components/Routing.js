@@ -21,11 +21,10 @@ export const Routing = () => {
       <main>
         <>
           <Nav />
-          {/*<SurpriseMe />*/}
           <Switch>
-            {/*}
+            
             <Route path="/" exact component={Login} />
-  */}
+  
             <Route path="/home" exact>
               <HomePage />
             </Route>
@@ -44,6 +43,7 @@ export const Routing = () => {
             </Route>
              
           </Switch>
+          
           <Footer />
             </>    
       </main>  

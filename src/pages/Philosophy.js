@@ -48,7 +48,7 @@ export const Philosophy = () => {
                 title="Philosophy">
             </SubjectButton>
             </form>
-
+<div className="container-browse-result">
             {result.map(book => (
               <>
                 <Link to={`/title/${book.id}`}
@@ -65,7 +65,8 @@ export const Philosophy = () => {
                   </a>
                   </Link>
                     </>
-            ))}     
+            ))}  
+          </div>
         </>
     )
 };

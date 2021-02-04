@@ -7,6 +7,8 @@ import { Arts } from "./Arts";
 import { Photography } from "./Photography";
 import { Design } from "./Design";
 import { Architecture } from "./Architecture";
+import { Nav } from "../components/Nav";
+
 
 export const Browse = () => {
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
@@ -19,22 +21,19 @@ export const Browse = () => {
     }, [history, accessToken]);
   */
   
-  const Container = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-`
+ 
+  
   return (
     <>
       <h1 className="browse">Browse subjects</h1>
-      <Container>
+      <section className="outer-container">
         <Anthropology />
         <Philosophy />
         <Architecture />
         <Photography />
         <Arts />
         <Design />
-      </Container>
+      </section>
       </>
     )
 };

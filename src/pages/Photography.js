@@ -47,7 +47,9 @@ export const Photography = () => {
                 type="submit" onChange={handleChange}
                 title="Photography">
             </SubjectButton>
-            </form>
+        </form>
+        <div className="container-browse-result">
+
 
             {result.map(book => (
               <>
@@ -65,7 +67,8 @@ export const Photography = () => {
                   </a>
                   </Link>
                     </>
-            ))}     
+            ))} 
+          </div>
         </>
     )
 };

@@ -47,9 +47,11 @@ export const Architecture = () => {
                 type="submit" id="architecture" onChange={handleChange}
                 title="Architecture">
             </SubjectButton>
-            </form>
+        </form>
+        <div className="container-browse-result">
 
-            {result.map(book => (
+
+        {result.map(book => (
               <>
                 <Link to={`/title/${book.id}`}
                         key={book.id}>
@@ -65,7 +67,8 @@ export const Architecture = () => {
                   </a>
                   </Link>
                     </>
-            ))}     
+        ))} 
+          </div>
         </>
     )
 };

@@ -47,7 +47,9 @@ export const Design = () => {
                 type="submit" onChange={handleChange}
                 title="Design">
             </SubjectButton>
-            </form>
+        </form>
+        <div className="container-browse-result">
+
 
             {result.map(book => (
               <>
@@ -66,7 +68,8 @@ export const Design = () => {
                   </a>
                   </Link>
                     </>
-            ))}     
+            ))}
+          </div>
         </>
     )
 };

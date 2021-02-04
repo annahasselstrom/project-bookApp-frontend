@@ -49,7 +49,7 @@ export const Anthropology = () => {
                 title="Anthropology">
             </SubjectButton>
             </form>
-
+            <div className="container-browse-result">
             {result.map(book => (
               <>
                 <Link to={`/title/${book.id}`}
@@ -63,11 +63,12 @@ export const Anthropology = () => {
                       subtitle={book.volumeInfo.subtitle}
                       authors={book.volumeInfo.authors}
                       averageRating={book.volumeInfo.averageRating}
-                    />
+                      />
                   </a>
                   </Link>
                     </>
-            ))}     
+            ))} 
+          </div>
         </>
     )
 };

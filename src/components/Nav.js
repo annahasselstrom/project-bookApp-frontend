@@ -2,14 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { Logout } from './Logout';
-import { nav } from './nav.css';
 
 export const Nav = () => {
-    return (
+  return (
+      <header>
       <nav>
         <h1 className="read-on-link">
           <NavLink to="/home">ReadOn</NavLink>
-          </h1>
+        </h1>
             <ul>
                 <li>
                   <NavLink to="/favorites">Favorites</NavLink>
@@ -21,6 +21,7 @@ export const Nav = () => {
                   <Logout />
                 </li>
             </ul>
-        </nav>
+      </nav>
+      </header>
     )
 };

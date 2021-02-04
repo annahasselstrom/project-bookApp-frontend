@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { SurpriseMe } from "../components/SurpriseMe";
 import { Card } from "../lib/Card";
 import { Browse } from "./Browse";
+import { Nav } from "../components/Nav";
 
 // base
 //const API_URL = `https://www.googleapis.com/books/v1/volumes?q="${inputValue}"&langRestrict=us&key=${API_KEY}`;
@@ -69,7 +70,6 @@ export const HomePage = () => {
             </form >
           <SurpriseMe />
         </section>
-        
             <section>
               <div>
             {result.map(book => (
