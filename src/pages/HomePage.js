@@ -71,7 +71,10 @@ export const HomePage = () => {
           <SurpriseMe />
         </section>
             <section>
-              <div>
+          <div>
+            
+            <div className="container-browse-result">
+
             {result.map(book => (
               <>
                 <div>
@@ -88,12 +91,15 @@ export const HomePage = () => {
                     </Link>
                 
                 </div>
+                {/*}
                     <Card 
                       title={book.volumeInfo.title}
                       subtitle={book.volumeInfo.subtitle}
-                    />
+                />
+            */}
                 </>
                 ))}  
+            </div>
           </div>
           <Browse />
         </section>

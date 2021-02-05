@@ -12,7 +12,7 @@ export const Anthropology = () => {
     const [result, setResult] = useState([]);
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
-  const API_URL_ANT = `https://www.googleapis.com/books/v1/volumes?q=subject:'anthropology'&langRestrict="fr"&key=${API_KEY}`;
+  const API_URL_ANT = `https://www.googleapis.com/books/v1/volumes?q=subject:'anthropology'&langRestrict="fr"&max-results=40&key=${API_KEY}`;
  
   {/*
     const handleChange = (event) => {

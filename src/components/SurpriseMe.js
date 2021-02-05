@@ -28,12 +28,14 @@ export const SurpriseMe = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then(data => {
-        setBook(data.items[Math.floor(Math.random() * data.items.length)].volumeInfo)
+        {/*setBook(data.items[Math.floor(Math.random() * data.items.length)].volumeInfo)*/ }
+        setBook(data.items[Math.floor(Math.random() * data.items.length)])
+
       })
       .catch((error) => console.log(error))
   };
   
-  console.log(book);
+  //console.log(book);
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -44,17 +46,18 @@ export const SurpriseMe = () => {
       </button>
       </form>
       
-      {/*<Link to={`/title/${book.id}`}>*/}
-<section className="surprise-me-card">
+      <section className="outer-container-surprise-card">
+      {book && <Link to={`/title/${book.id}`}>
+         
       {book && <Card
         
-        thumbnail={book && book.imageLinks.thumbnail}
-        title={book && book.title}
-        subtitle={book && book.subtitle}
-        authors={book && book.authors}
-        averageRating={book && book.averageRating}
+        thumbnail={book && book.volumeInfo.imageLinks.thumbnail}
+        title={book && book.volumeInfo.title}
+        subtitle={book && book.volumeInfo.subtitle}
+        authors={book && book.volumeInfo.authors}
+        averageRating={book && book.volumeInfo.averageRating}
         />}
-        {/*</Link>*/}
+      </Link>}
         </section>
           </>
     )

@@ -33,7 +33,7 @@ export const Favorites = () => {
 
         <h1 className="favorite">Favorite Books</h1>
         <Card
-            title="Really?! Not even one favorite book?"
+            title="Really? Not even one favorite book?"
         />
         </>
         

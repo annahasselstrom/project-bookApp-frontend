@@ -243,9 +243,11 @@ input:invalid {
     max-width: 400px;
   }
 
-  .surprise-me-card {
+  .outer-container-surprise-card {
+    display: flex;
     justify-content: center;
   }
+  
 }
 
 
@@ -315,10 +317,6 @@ input:invalid {
     margin: auto;
     align-items: center;
     justify-content: center;
-  }
-
-  .container-detail {
-    width: 600px;
   }
 
 }

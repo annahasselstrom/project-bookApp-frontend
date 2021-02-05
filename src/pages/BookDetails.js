@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Card } from "../lib/Card";
+import { DetailsCard } from "../lib/DetailsCard";
 import { ShowMoreText } from 'react-show-more-text';
 import { Nav } from "../components/Nav";
 
@@ -13,11 +13,11 @@ export const BookDetails = () => {
   const [book, setBook] = useState({});
 
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
-  //const FAV_URL = `http://localhost:8080/favorites/${bookId}`;
+  const FAV_URL = `http://localhost:8080/favorites/2vVGCdt0EAkC`;
 
-    useEffect(() => {
+  useEffect(() => {
     fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}?key=${API_KEY}`)
-    
+  
       .then((res) => res.json())
       .then((json) => {
         //console.log(json.volumeInfo)
@@ -39,8 +39,7 @@ export const BookDetails = () => {
       </Link>
         
         
-        <section className="container-detail">
-        {book && <Card
+        {book && <DetailsCard
           /*thumbnail={book.imageLinks.thumbnail}*/
             button={<button
               type='submit'
@@ -54,7 +53,6 @@ export const BookDetails = () => {
           averageRating={book.averageRating}
           description={book.description && book.description.replace(/<\/?[^>]+>/gi, '')}
         />}
-          </section>
    </>   
   )
 };
