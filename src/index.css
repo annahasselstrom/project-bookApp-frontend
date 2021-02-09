@@ -267,8 +267,21 @@ input:invalid {
    -webkit-text-fill-color: white;
 }
 
+/***** Button styling Clear all *****/
+
+.clear-all-button {
+  font-size: 16px;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  background: #ffad4f;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /***** Page Headings *****/
-.favorite, .book-details {
+.favorite, .book-details, .favorites {
   color: #4a716f;
   color: #ffd94f;
   color: #ffad4f;
@@ -325,15 +338,6 @@ input:invalid {
 .details-text-arrow {
   visibility: hidden;
 }
-
-
-/* Status.js styling 
-.status {
-  color: white;
-  font-size: 18px;
-}
-*/
-
 
 /***** Footer *****/
 footer{

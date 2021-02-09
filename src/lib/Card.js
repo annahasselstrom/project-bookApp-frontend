@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
-import { AddButton } from "./AddButton";
 
 
 const Container = styled.div`
+:hover {
+  opacity: .7;
+}
   padding: 20px;
   border-radius: 6px;
   border: black;
@@ -21,6 +23,7 @@ const Container = styled.div`
     justify-content: center;
   }
 `
+
 
 const Title = styled.h1`
   margin: 0;
@@ -74,9 +77,12 @@ const Description = styled.div`
   margin-top: 20px;
   `
 const StyledButton = styled.button`
-font-size: 14px;
-padding: 5px;
-background: red;
+  font-size: 14px;
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  background:  #ffad4f;
+  border: none;
 `
 
 export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
@@ -86,7 +92,7 @@ export const Card = ({ title, subtitle, authors, averageRating, thumbnail, descr
       {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
           <Content>
             <div>
-              {button && <StyledButton>{button}</StyledButton>}
+              {button && <StyledButton>Remove{button}</StyledButton>}
               </div>
             <div>
               {title && <Title>{title}</Title>}

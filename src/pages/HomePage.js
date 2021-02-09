@@ -45,13 +45,13 @@ export const HomePage = () => {
         .catch((error) => console.log(error))
     };
 
-  {/*}
+  
   useEffect(() => {
       if (!accessToken) {
-        history.push("/home")
+        history.push("/")
       }
     }, [history, accessToken]);
-  */}
+  
 
     return (
       <>

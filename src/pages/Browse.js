@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
+
 import styled from 'styled-components/macro';
 
 import { Anthropology } from "./Anthropology";
@@ -12,20 +15,23 @@ import { Nav } from "../components/Nav";
 
 export const Browse = () => {
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
+  const accessToken = useSelector((store) => store.user.login.accessToken);
+  const history = useHistory();
 
-  /*
+
     useEffect(() => {
         if (!accessToken) {
           history.push("/")
         }
     }, [history, accessToken]);
-  */
+  
   
  
   
   return (
     <>
       <h1 className="browse">Browse subjects</h1>
+      
       <section className="outer-container">
         <Anthropology />
         <Philosophy />

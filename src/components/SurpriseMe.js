@@ -14,7 +14,7 @@ export const SurpriseMe = () => {
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=subject:'design'&langRestrict="fr"&max-results=50&key=${API_KEY}`;
  
-  console.log(API_URL)
+  //console.log(API_URL)
   //console.log(API_URL_ANT)
   /*
     const handleChange = (event) => {

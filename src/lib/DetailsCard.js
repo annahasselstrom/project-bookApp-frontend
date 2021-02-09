@@ -2,15 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
-import { AddButton } from "./AddButton";
-
-/*
-const OuterContainer = styled.div`
-  display: flex;
-  flex-direction: wrap;
-  
-`
-*/
 const Container = styled.div`
   padding: 20px;
   border-radius: 6px;
@@ -23,16 +14,14 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
   }
 `
 const SecondaryContainer = styled.div`
   margin-bottom: 30px;
   @media (min-width: 768px) {
-  margin-left: 40px;
+    margin-left: 40px;
   }
 `
-
 const Title = styled.h1`
   margin: 0;
   color: black;
@@ -40,7 +29,6 @@ const Title = styled.h1`
   text-align: left;
   margin-top: 15px;
 `
-
 const Subtitle = styled.p`
   margin: 0;
   margin-top: 8px;
@@ -75,8 +63,6 @@ const Thumbnail = styled.img`
 `
 const TitleBar = styled.div`
   display: flex;
-  @media (min-width: 768px) {
-    margin-top: 0;
 `
 const Content = styled.div`
   justify-content: start;
@@ -87,11 +73,11 @@ const DescriptionContent = styled.div`
   margin-top: 30px;
   margin-right: 12px;
   @media (min-width: 768px) {
-  display: flex;
-  font-size: 14px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-right: 22px;
+    display: flex;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-right: 22px;
   }
 `
 
@@ -99,7 +85,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   @media (min-width: 768px) {
-  margin-right: 22px;
+    margin-right: 22px;
   }
   `
   
@@ -110,19 +96,19 @@ background: red;
 margin-bottom: 20px;
 margin-top: 12px;
 @media (min-width: 768px) {
-margin-top: 15px;
+  margin-top: 15px;
 }
 `
 
-  export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
-      <Container> 
-          <SecondaryContainer>
-          <ButtonContainer>
-              {button && <StyledButton>{button}</StyledButton>}
-          </ButtonContainer>
+export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
+  <Container> 
+    <SecondaryContainer>
+      <ButtonContainer>
+        {button && <StyledButton>{button}</StyledButton>}
+      </ButtonContainer>
       <TitleBar>
-              {thumbnail && <Thumbnail url={thumbnail} />}
-              {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
+        {thumbnail && <Thumbnail url={thumbnail} />}
+        {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
           <Content>
             <div>
               {title && <Title>{title}</Title>}
@@ -131,13 +117,12 @@ margin-top: 15px;
             </div>
             <div>
               {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
-                  </div>
-
-            </Content>
-          </TitleBar>
-          <DescriptionContent>
-              {description && <DescriptionContent>{description}</DescriptionContent>}
-            </DescriptionContent>
-            </SecondaryContainer>
+            </div>
+          </Content>
+      </TitleBar>
+      <DescriptionContent>
+          {description && <DescriptionContent>{description}</DescriptionContent>}
+      </DescriptionContent>
+    </SecondaryContainer>
   </Container>
 )
