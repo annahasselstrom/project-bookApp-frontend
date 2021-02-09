@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
-import styled from 'styled-components/macro';
 
 import { Anthropology } from "./Anthropology";
 import { Philosophy } from "./Philosophy";
@@ -10,11 +9,10 @@ import { Arts } from "./Arts";
 import { Photography } from "./Photography";
 import { Design } from "./Design";
 import { Architecture } from "./Architecture";
-import { Nav } from "../components/Nav";
 
 
 export const Browse = () => {
-  const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
+  //const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const accessToken = useSelector((store) => store.user.login.accessToken);
   const history = useHistory();
 

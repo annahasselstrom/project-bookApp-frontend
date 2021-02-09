@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Card } from "../lib/Card";
 
@@ -16,19 +14,13 @@ export const SurpriseMe = () => {
  
   //console.log(API_URL)
   //console.log(API_URL_ANT)
-  /*
-    const handleChange = (event) => {
-      const randomBook = event.target.value;
-      //setRandomBook(randomBook); //state variable, from button
-    };
-    */
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
     fetch(API_URL)
       .then((res) => res.json())
       .then(data => {
-        {/*setBook(data.items[Math.floor(Math.random() * data.items.length)].volumeInfo)*/ }
         setBook(data.items[Math.floor(Math.random() * data.items.length)])
 
       })

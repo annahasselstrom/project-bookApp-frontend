@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 import { user } from "../reducers/user";
-import { Nav } from "../components/Nav";
 
 
 const SIGNUP_URL = "http://localhost:8080/users";
@@ -105,7 +104,7 @@ export const Login = () => {
   
   return (
     <>
-    <section className={"signup", "main-container"}>
+    <section className="signup main-container">
       <form>
         <h1 className="signup-heading">Sign Up/Login</h1>
         {/*<label className="input-name"> Name: </label>*/}

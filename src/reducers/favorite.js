@@ -1,13 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const bookData = [
-  { id: 1, title: 'abc'},
-  { id: 2, title: 'def' },
-  { id: 3, title: 'åäö' },
-  { id: 4, title: 'tri' },
-  { id: 5, title: 'tru' }
-]
 
 const initialState = {
   list: {

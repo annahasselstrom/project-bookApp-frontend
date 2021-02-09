@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { DetailsCard } from "../lib/DetailsCard";
-import { ShowMoreText } from 'react-show-more-text';
 
 import { favorite } from '../reducers/favorite';
 

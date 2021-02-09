@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+//import { useSelector } from 'react-redux';
 
 import { Card } from "../lib/Card";
 import { SubjectButton } from "../lib/SubjectButton";
 
  
 export const Philosophy = () => {
-    const history = useHistory();
-    const accessToken = useSelector((store) => store.user.login.accessToken);
-    const [list, setList] = useState([]);
+    //const history = useHistory();
+    //const accessToken = useSelector((store) => store.user.login.accessToken);
+    //const [list, setList] = useState([]);
     const [result, setResult] = useState([]);
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=subject:'philosophy'&langRestrict="fr"&key=${API_KEY}`;
  
     const handleChange = (event) => {
-        const list = event.target.value;
-      setList(list); //state variable, from button
+        //const list = event.target.value;
+      //setList(list); //state variable, from button
     };
    
     const handleSubmit = (event) => {
@@ -31,13 +31,7 @@ export const Philosophy = () => {
             .catch((error) => console.log(error))
     };
     
-  /*
-    useEffect(() => {
-        if (!accessToken) {
-          history.push("/")
-        }
-    }, [history, accessToken]);
-  */
+  
   
     //map and output
     return (
@@ -53,7 +47,6 @@ export const Philosophy = () => {
               <>
                 <Link to={`/title/${book.id}`}
                         key={book.id}>
-                  <a key={book.id}> 
                     <Card
                       thumbnail={book.volumeInfo.imageLinks.thumbnail}
                       alt={book.volumeInfo.title}
@@ -62,7 +55,6 @@ export const Philosophy = () => {
                       authors={book.volumeInfo.authors}
                       averageRating={book.volumeInfo.averageRating}
                     />
-                  </a>
                   </Link>
                     </>
             ))}  

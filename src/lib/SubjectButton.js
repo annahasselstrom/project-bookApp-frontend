@@ -21,36 +21,7 @@ const Title = styled.h1`
   font-size: 24px;
   `
 
-const Subtitle = styled.p`
-  margin: 0;
-  color: #6b6b6b;
-`
-const Authors = styled.p`
-  margin: 0;
-  color: #6b6b6b;
-  font-size: 14px;
-`
-
-const AverageRating = styled.p`
-  margin: 0;
-  color: #6b6b6b;
-  font-size: 14px;
-`
-
-const Thumbnail = styled.img`
-  width: 100%;
-  height: 100%;
-  //background-image: url(${(props) => props.url});
-  //background-size: cover;
-  margin-right: 10px;
-  `
-
-const TitleBar = styled.div`
-  display: flex;
-  align-items: center;
-  `
-
-export const SubjectButton = ( { title, subtitle, authors, averageRating, thumbnail }) => (
+export const SubjectButton = ( { title }) => (
   <Container>
     {title && <Title>{title}</Title>}
   </Container>

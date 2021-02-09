@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { Browse } from "../pages/Browse";
@@ -14,7 +13,7 @@ import { HomePage } from "../pages/HomePage";
 //import { SurpriseMe } from "./SurpriseMe";
 
 export const Routing = () => {
-  const accessToken = useSelector(store => store.user.login.accessToken);
+  //const accessToken = useSelector(store => store.user.login.accessToken);
   
   return (
     <BrowserRouter>
