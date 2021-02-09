@@ -4,7 +4,6 @@ import styled from 'styled-components/macro';
 const Container = styled.button`
   display: flex;
   justify-content: center;
-
   padding: 20px;
   border-radius: 6px;
   border: black;
@@ -14,15 +13,14 @@ const Container = styled.button`
     width: 400px;
   }
 `
-
 const Title = styled.h1`
   margin: 0;
   color: black;
   font-size: 24px;
   `
 
-export const SubjectButton = ( { title }) => (
+export const SubjectButton = ({ title }) => (
   <Container>
     {title && <Title>{title}</Title>}
   </Container>
-)
+);

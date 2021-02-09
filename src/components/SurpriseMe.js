@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { Card } from "../lib/Card";
 
-//import { user } from "../reducers/user";
  
 export const SurpriseMe = () => {
   const [book, setBook] = useState();
@@ -42,7 +41,6 @@ export const SurpriseMe = () => {
       {book && <Link to={`/title/${book.id}`}>
          
       {book && <Card
-        
         thumbnail={book && book.volumeInfo.imageLinks.thumbnail}
         title={book && book.volumeInfo.title}
         subtitle={book && book.volumeInfo.subtitle}
@@ -51,6 +49,6 @@ export const SurpriseMe = () => {
         />}
       </Link>}
         </section>
-          </>
-    )
+    </>
+  )
 };

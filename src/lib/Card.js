@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-
-
 const Container = styled.div`
-:hover {
-  opacity: .7;
-}
   padding: 20px;
   border-radius: 6px;
   border: black;
@@ -22,8 +17,6 @@ const Container = styled.div`
     justify-content: center;
   }
 `
-
-
 const Title = styled.h1`
   margin: 0;
   color: black;
@@ -31,7 +24,6 @@ const Title = styled.h1`
   text-align: left;
   margin-top: 15px;
 `
-
 const Subtitle = styled.p`
   margin: 0;
   margin-top: 8px;
@@ -45,7 +37,6 @@ const Authors = styled.p`
   font-size: 14px;
   text-align: left;
   margin-top: 15px;
-
 `
 const AverageRating = styled.p`
   margin: 0;
@@ -85,26 +76,26 @@ const StyledButton = styled.button`
 `
 
 export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
-  <Container> 
-      <TitleBar>
+  <Container>
+    <TitleBar>
       {thumbnail && <Thumbnail url={thumbnail} />}
       {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
-          <Content>
-            <div>
-              {button && <StyledButton>Remove{button}</StyledButton>}
-              </div>
-            <div>
-              {title && <Title>{title}</Title>}
-              {subtitle && <Subtitle>{subtitle}</Subtitle>}
-              {authors && <Authors>By {authors}</Authors>}
-            </div>
-            <div>
-              {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
-            </div>
-            <div>
-              {description && <Description>{description}</Description>}
-          </div>
+      <Content>
+        <div>
+          {button && <StyledButton>Remove{button}</StyledButton>}
+        </div>
+        <div>
+          {title && <Title>{title}</Title>}
+          {subtitle && <Subtitle>{subtitle}</Subtitle>}
+          {authors && <Authors>By {authors}</Authors>}
+        </div>
+        <div>
+          {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
+        </div>
+        <div>
+          {description && <Description>{description}</Description>}
+        </div>
       </Content>
-      </TitleBar>
+    </TitleBar>
   </Container>
-)
+);

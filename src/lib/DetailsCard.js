@@ -99,29 +99,33 @@ margin-top: 12px;
 }
 `
 
-export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
-  <Container> 
+export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail, description, isFavorite, onFavoriteToggle }) => (
+  <Container>
     <SecondaryContainer>
       <ButtonContainer>
-        {button && <StyledButton>{button}</StyledButton>}
+        {/*{button && <StyledButton>{button}</StyledButton>}*/}
+        <StyledButton
+          onClick={onFavoriteToggle(isFavorite)}>
+          {isFavorite ? 'Add' : 'Remove'}
+        </StyledButton>
       </ButtonContainer>
       <TitleBar>
         {thumbnail && <Thumbnail url={thumbnail} />}
         {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
-          <Content>
-            <div>
-              {title && <Title>{title}</Title>}
-              {subtitle && <Subtitle>{subtitle}</Subtitle>}
-              {authors && <Authors>By {authors}</Authors>}
-            </div>
-            <div>
-              {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
-            </div>
-          </Content>
+        <Content>
+          <div>
+            {title && <Title>{title}</Title>}
+            {subtitle && <Subtitle>{subtitle}</Subtitle>}
+            {authors && <Authors>By {authors}</Authors>}
+          </div>
+          <div>
+            {averageRating && <AverageRating>Rating {averageRating}</AverageRating>}
+          </div>
+        </Content>
       </TitleBar>
       <DescriptionContent>
-          {description && <DescriptionContent>{description}</DescriptionContent>}
+        {description && <DescriptionContent>{description}</DescriptionContent>}
       </DescriptionContent>
     </SecondaryContainer>
   </Container>
-)
+);
