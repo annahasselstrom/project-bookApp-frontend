@@ -6,27 +6,26 @@ import { favorite } from '../reducers/favorite';
 import { Card } from 'lib/Card';
 
 export const Favorites = ({ book }) => {
-  const { bookId } = useParams();
   const history = useHistory();
   const accessToken = useSelector((store) => store.user.login.accessToken);
   const allFavorites = useSelector((store) => store.favorite.list.items);
   const dispatch = useDispatch();
   //console.log(allFavorites);
     
-  const handleClick = () => {
+  const handleClick = (bookId) => {
     console.log('hello')
-      dispatch(
-        favorite.actions.deleteFavorite({
-          id: bookId 
-       })
-      );
+    dispatch(
+      favorite.actions.deleteFavorite({
+        id: bookId
+      })
+    );
   };
       
   const handleChange = () => {
     console.log('hello')
-      dispatch(
-        favorite.actions.clearAll()
-      );
+    dispatch(
+      favorite.actions.clearAll()
+    );
   };
 
   useEffect(() => {
@@ -45,19 +44,21 @@ export const Favorites = ({ book }) => {
       <div className="container-browse-result">
         {allFavorites.map((item) => (
           <Card
-            button onClick={handleClick}
+            onClick={handleClick}
             title={item.title}
             subtitle={item.subtitle}
             authors={item.authors}
-            thumbnail={item.image}>
+            thumbnail={item.image}
+            id={item.id}>
           </Card>
         ))}
       </div>
-      <button
-        className="clear-all-button"
-        onClick={handleChange}>
-        Clear all favorites
-      </button>
+      {allFavorites.length > 0 &&
+        <button
+          className="clear-all-button"
+          onClick={handleChange}>
+          Clear all favorites
+        </button>}
     </>
   )
 };

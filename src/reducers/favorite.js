@@ -18,11 +18,11 @@ export const favorite = createSlice({
     },
    
     deleteFavorite: (state, action) => {
-      const { bookId } = action.payload;
+      const { id } = action.payload;
       console.log(action)
 
       state.list.items = state.list.items.filter(
-        (item) => item.id !== bookId
+        (item) => item.id !== id
       );
     },
 

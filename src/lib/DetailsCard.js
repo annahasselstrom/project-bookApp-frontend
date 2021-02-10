@@ -80,6 +80,11 @@ const DescriptionContent = styled.div`
     margin-right: 22px;
   }
 `
+const HeadingText = styled.h3`
+margin-bottom: 4px;
+margin-top: 4px;
+`
+
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -123,6 +128,7 @@ export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail
           {isFavorite ? 'Remove' : 'Add to favorite'}
         </StyledButton>
       </ButtonContainer>
+      <HeadingText>Intro</HeadingText>
       <DescriptionContent>
         {description && <DescriptionContent>{description}</DescriptionContent>}
       </DescriptionContent>

@@ -16,7 +16,7 @@ export const BookDetails = () => {
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
 
   const handleClick = (isFavorite) => {
-    console.log('hello')
+    console.log(isFavorite)
     if (isFavorite) {
       dispatch(
         favorite.actions.deleteFavorite({
@@ -53,6 +53,7 @@ export const BookDetails = () => {
 
   const isFavorite = !!favoriteBooks.find(item => item.id === bookId);
   console.log(isFavorite)
+  console.log(favoriteBooks)
 
   return (
     <>

@@ -77,14 +77,14 @@ const StyledButton = styled.button`
   background:  #ffad4f;
   border: none;
 `
-export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
+export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, onClick, id }) => (
   <Container>
     <TitleBar>
       {thumbnail && <Thumbnail url={thumbnail} />}
       {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
       <Content>
         <div>
-          {button && <StyledButton>Remove{button}</StyledButton>}
+          <StyledButton onClick={() => onClick(id)}>Remove</StyledButton>
         </div>
         <div>
           {title && <Title>{title}</Title>}
