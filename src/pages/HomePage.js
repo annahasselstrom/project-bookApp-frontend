@@ -46,10 +46,10 @@ export const HomePage = () => {
 
   
   useEffect(() => {
-      if (!accessToken) {
-        history.push("/")
-      }
-    }, [history, accessToken]);
+    if (!accessToken) {
+      history.push("/")
+    }
+  }, [history, accessToken]);
   
 
     return (

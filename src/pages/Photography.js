@@ -1,24 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-//import { useSelector } from 'react-redux';
 
 import { Card } from "../lib/Card";
 import { SubjectButton } from "../lib/SubjectButton";
 
  
 export const Photography = () => {
-    //const history = useHistory();
-    //const accessToken = useSelector((store) => store.user.login.accessToken);
-    //const [list, setList] = useState([]);
     const [result, setResult] = useState([]);
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=subject:'photography'&langRestrict="fr"&key=${API_KEY}`;
- 
-    const handleChange = (event) => {
-        //const list = event.target.value;
-      //setList(list); //state variable, from button
-    };
    
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,9 +22,7 @@ export const Photography = () => {
             .catch((error) => console.log(error))
     };
     
-  
-    //map and output
-    return (
+  return (
         <>
             <form onSubmit={handleSubmit}>
             <SubjectButton

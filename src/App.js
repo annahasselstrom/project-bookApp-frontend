@@ -12,9 +12,6 @@ const reducer = combineReducers({
   favorite: favorite.reducer
 });
 
-//const store = configureStore({ reducer });
-
-
 // Persistence: Tell the store to persist the state in localStorage after every action
 // Retrieve the localstorage (if there is one, else use global initialState) and use it as our initial state
 const persistedStateJSON = localStorage.getItem("reduxState");
@@ -31,8 +28,6 @@ const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTEN
 store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 });
-
-
 
 export const App = () => {
   return (

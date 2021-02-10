@@ -21,15 +21,6 @@ export const Architecture = () => {
       .catch((error) => console.log(error))
   };
     
-  /*
-    useEffect(() => {
-        if (!accessToken) {
-          history.push("/")
-        }
-    }, [history, accessToken]);
-  */
-  
-    //map and output
     return (
         <>
             <form onSubmit={handleSubmit}>
