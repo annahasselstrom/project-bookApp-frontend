@@ -67,6 +67,9 @@ const Description = styled.div`
   margin-top: 20px;
   `
 const StyledButton = styled.button`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; 
   font-size: 14px;
   color: white;
   padding: 6px;

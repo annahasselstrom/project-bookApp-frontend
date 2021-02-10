@@ -105,7 +105,7 @@ export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail
       <ButtonContainer>
         {/*{button && <StyledButton>{button}</StyledButton>}*/}
         <StyledButton
-          onClick={onFavoriteToggle(isFavorite)}>
+          onClick={() => onFavoriteToggle(isFavorite)}>
           {isFavorite ? 'Add' : 'Remove'}
         </StyledButton>
       </ButtonContainer>

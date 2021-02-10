@@ -5,8 +5,10 @@ import { useHistory } from 'react-router-dom';
 import { user } from "../reducers/user";
 
 
-const SIGNUP_URL = "http://localhost:8080/users";
-const LOGIN_URL = "http://localhost:8080/sessions";
+const SIGNUP_URL = "https://annas-book-app.herokuapp.com/users";
+//http://localhost:8080/users
+const LOGIN_URL = "https://annas-book-app.herokuapp.com/sessions";
+//http://localhost:8080/sessions
 
 export const Login = () => {
   const dispatch = useDispatch();
