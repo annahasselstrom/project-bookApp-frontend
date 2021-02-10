@@ -146,6 +146,8 @@ h1 {
   -moz-appearance: none;
   appearance: none;
   border: none;
+  background: white;
+  font-family: Roboto;
   padding: 12px 8px;
   font-weight: 300;
   border-radius: 4px;
@@ -178,6 +180,7 @@ h1 {
 }
 
 /***** Form styling *****/
+
 form {
   display: flex;
   margin: auto;

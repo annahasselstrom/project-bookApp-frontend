@@ -47,7 +47,6 @@ const AverageRating = styled.p`
 const Thumbnail = styled.img`
   height: 200px;
   width: 160px;
-  margin-right: 20px;
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,14 +76,14 @@ const StyledButton = styled.button`
   background:  #ffad4f;
   border: none;
 `
-export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, onClick, id }) => (
+export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, onClick, id, button }) => (
   <Container>
     <TitleBar>
       {thumbnail && <Thumbnail url={thumbnail} />}
       {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
       <Content>
         <div>
-          <StyledButton onClick={() => onClick(id)}>Remove</StyledButton>
+          {button && <StyledButton onClick={() => onClick(id)}>Remove</StyledButton>}
         </div>
         <div>
           {title && <Title>{title}</Title>}

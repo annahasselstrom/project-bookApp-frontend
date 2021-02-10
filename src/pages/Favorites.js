@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useHistory, Link, useParams } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { favorite } from '../reducers/favorite';
@@ -10,7 +10,6 @@ export const Favorites = ({ book }) => {
   const accessToken = useSelector((store) => store.user.login.accessToken);
   const allFavorites = useSelector((store) => store.favorite.list.items);
   const dispatch = useDispatch();
-  //console.log(allFavorites);
     
   const handleClick = (bookId) => {
     console.log('hello')
@@ -44,7 +43,7 @@ export const Favorites = ({ book }) => {
       <div className="container-browse-result">
         {allFavorites.map((item) => (
           <Card
-            onClick={handleClick}
+            button onClick={handleClick}
             title={item.title}
             subtitle={item.subtitle}
             authors={item.authors}

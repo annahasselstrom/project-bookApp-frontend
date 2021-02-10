@@ -28,7 +28,7 @@ const Title = styled.h1`
   color: black;
   font-size: 18px;
   text-align: left;
-  margin-top: 15px;
+  margin-top: 10px;
 `
 const Subtitle = styled.p`
   margin: 0;
@@ -53,12 +53,11 @@ const AverageRating = styled.p`
 const Thumbnail = styled.img`
   height: 200px;
   width: 160px;
-  margin-right: 20px;
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
-  margin-right: 30px;
+  margin-right: 15px;
   margin-top: 0%;
 `
 const TitleBar = styled.div`
@@ -66,6 +65,7 @@ const TitleBar = styled.div`
 `
 const Content = styled.div`
   justify-content: start;
+  margin-left: 0;
   width: 50%;
 `
 const DescriptionContent = styled.div`
@@ -75,16 +75,18 @@ const DescriptionContent = styled.div`
   @media (min-width: 768px) {
     display: flex;
     font-size: 14px;
-    margin-top: 15px;
+    margin-top: 2px;
     margin-bottom: 30px;
     margin-right: 22px;
   }
 `
 const HeadingText = styled.h3`
-margin-bottom: 4px;
-margin-top: 4px;
+  margin-top: 16px;
+  margin-bottom: 2px;
+  @media (min-width: 768px) {
+    margin-top: 20px;
+  }
 `
-
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-start;
