@@ -11,7 +11,7 @@ export const Logout = () => {
         event.preventDefault();
     
         dispatch(user.actions.logout());
-        dispatch(user.actions.setStatusMessage({ statusMessage: "Logged out!" }));
+        dispatch(user.actions.setStatusMessage({ statusMessage:'' }));
         history.push("/")
     };
     

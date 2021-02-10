@@ -5,7 +5,7 @@ import { Logout } from './Logout';
 
 export const Nav = () => {
   return (
-      <header>
+    <header>
       <nav>
         <h1 className="read-on-link">
           <NavLink to="/home">ReadOn</NavLink>
@@ -22,6 +22,6 @@ export const Nav = () => {
                 </li>
             </ul>
       </nav>
-      </header>
-    )
+    </header>
+  )
 };

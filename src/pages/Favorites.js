@@ -12,7 +12,7 @@ export const Favorites = ({ book }) => {
     const allFavorites = useSelector((store) => store.favorite.list.items);
     const dispatch = useDispatch();
     
-    //console.log(allFavorites);
+    console.log(allFavorites);
     
     const handleClick = () => {
         dispatch(
@@ -23,6 +23,7 @@ export const Favorites = ({ book }) => {
     };
       
     const handleChange = () => {
+      //console.log('hello')
         dispatch(
             favorite.actions.clearAll()
         );
@@ -46,16 +47,16 @@ export const Favorites = ({ book }) => {
           {allFavorites.map((item) => (
             <Card
               button onClick={handleClick}
-              thumbnail={item.thumbnail}
               title={item.title}
               subtitle={item.subtitle}
               authors={item.authors}
+              thumbnail={item.image}
             />
           ))}
         </div>
             <button
                 className="clear-all-button"
-                onChange={handleChange}>
+                onClick={handleChange}>
                 Clear all favorites
             </button>
         </>

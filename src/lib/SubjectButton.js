@@ -18,7 +18,6 @@ const Title = styled.h1`
   color: black;
   font-size: 24px;
   `
-
 export const SubjectButton = ({ title }) => (
   <Container>
     {title && <Title>{title}</Title>}

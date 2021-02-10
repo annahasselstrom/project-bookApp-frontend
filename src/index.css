@@ -35,7 +35,6 @@ header {
   z-index: 1;
   }
 
-  
   nav {
     display: flex;
     justify-content: space-between;
@@ -56,7 +55,6 @@ li {
   margin-right: 15px;
 }
 
-
 a {
   color:white;
   text-decoration: none;
@@ -68,7 +66,6 @@ border-bottom: 1px solid #ffd94f;
 }
 
 h1 a {
-/*color: #ffad4f;*/
 color: #ffd94f;
 margin-left: 10px;
 margin-right: 20px;
@@ -76,7 +73,6 @@ font-size: 30px;
 }
 
 h1 a.active {
-  /*color: #ffad4f;*/
   color: #ffd94f;
   border-bottom: none;
   margin-left: 10px;
@@ -84,6 +80,7 @@ h1 a.active {
 }
 
 /***** Media Query min 768px *****/
+
 @media (min-width: 768px) {
 
   nav {
@@ -100,6 +97,7 @@ h1 a.active {
 }
 
 /***** Sign-Up *****/
+
 .sign-up {
   background-image: url("./assets/forestBook.png");
   background-repeat: no-repeat;
@@ -120,6 +118,7 @@ h1 {
 }
 
 /***** Logout button *****/
+
 .logout-button {
   font-size: 16px;
   border: none;
@@ -130,15 +129,22 @@ h1 {
 }
 
 /***** Login Page *****/
+
 .button-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .button-container button {
   font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: none;
   padding: 12px 8px;
   font-weight: 300;
@@ -148,6 +154,7 @@ h1 {
 }
 
 /***** All pages *****/
+
 .main-container {
   background-image: url("./assets/forestBook.png");
   background-repeat: no-repeat;
@@ -162,6 +169,7 @@ h1 {
 }
 
 /***** ListsList *****/
+
 .list-container {
   display: flex;
   flex-direction: row;
@@ -180,12 +188,6 @@ form {
   width: 92%;
 }
 
-/*
-label {
-  margin-bottom: 10px;
-  color: #20274e;
-}
-*/
 input.input-password, input.input-name {
   padding: 10px;
   color: white;
@@ -199,11 +201,8 @@ input.input-password {
 input {
   margin-bottom: 20px;
   margin-top: 50px;
-  /*background-color: #a45c4e;*/
   background-color: #ffad4f;
-  /*background-color: #80768a;*/
   border: none;
-  /*border-bottom: 2px solid white;*/
   padding: 10px 3px;
   padding-left: 10px;
   color: white;
@@ -220,24 +219,18 @@ input::placeholder {
   text-align: center;
 }
 
-/*
-input:valid {
-  border-bottom: 3px solid rgb(177, 238, 193);
-}
-
-input:invalid {
-  border-bottom: 3px solid #f77676;
-}
-*/
-
 .user-message {
-  color: #f55e5e;
-  font-size: 28px;
+  color: #ffd94f;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
+  /*padding: 12px;*/
+  border-radius: 4px;
+  background-color: white;
 }
 
 /***** Media Query min 768px *****/
+
 @media (min-width: 768px) {
   form {
     max-width: 400px;
@@ -247,11 +240,11 @@ input:invalid {
     display: flex;
     justify-content: center;
   }
-  
 }
 
 
 /***** Button styling HomePage *****/
+
 .search-button, .surprise-button {
   margin-top: 10px;
   margin: auto;
@@ -281,9 +274,8 @@ input:invalid {
 }
 
 /***** Page Headings *****/
+
 .favorite, .book-details, .favorites {
-  color: #4a716f;
-  color: #ffd94f;
   color: #ffad4f;
   font-size: 36px;
   text-align: center;
@@ -293,28 +285,17 @@ input:invalid {
   font-size: 36px;
 }
 
-
 /***** Browse Page *****/
+
 .browse {
   margin-top: 40px;
-  /*color: #a44e5b;*/
-  /*color: #a44e86*/
-  /*color: #6c4ea4;*/
-  /*color: #ffad4f;*/
-  /*color: #ffd94f;*/
-  color: #ff4f9b;
-  color: #ffd94f;
   color: #ffad4f;
   font-size: 36px;
   text-align: center;
 }
 
-{/*}
-.outer-container {
-  width: 80%;
-}
-*/}
 /***** Media Query min 768px *****/
+
 @media (min-width: 768px) {
   .container-browse  {
     display: flex;
@@ -331,15 +312,16 @@ input:invalid {
     align-items: center;
     justify-content: center;
   }
-
 }
 
 /***** Book Details *****/
+
 .details-text-arrow {
   visibility: hidden;
 }
 
 /***** Footer *****/
+
 footer{
   display: flex;
   align-items: center;

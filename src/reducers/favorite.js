@@ -26,7 +26,7 @@ export const favorite = createSlice({
       );
     },
 
-    clearAll: () => {
+    clearAll: (state, action) => {
       return initialState // Does not need a state or action(payload)
     }
   }

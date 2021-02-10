@@ -41,7 +41,6 @@ const Authors = styled.p`
   font-size: 14px;
   text-align: left;
   margin-top: 15px;
-
 `
 const AverageRating = styled.p`
   margin: 0;
@@ -79,7 +78,6 @@ const DescriptionContent = styled.div`
     margin-right: 22px;
   }
 `
-
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -87,18 +85,19 @@ const ButtonContainer = styled.div`
     margin-right: 22px;
   }
   `
-  
 const StyledButton = styled.button`
 font-size: 14px;
-padding: 5px;
-background: red;
+padding: 6px;
+background-color:  #ffad4f;
+color: white;
+border: none;
+border-radius: 4px;
 margin-bottom: 20px;
 margin-top: 12px;
 @media (min-width: 768px) {
   margin-top: 15px;
 }
 `
-
 export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail, description, isFavorite, onFavoriteToggle }) => (
   <Container>
     <SecondaryContainer>
@@ -106,7 +105,7 @@ export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail
         {/*{button && <StyledButton>{button}</StyledButton>}*/}
         <StyledButton
           onClick={() => onFavoriteToggle(isFavorite)}>
-          {isFavorite ? 'Add' : 'Remove'}
+          {!isFavorite ? 'Add' : 'Remove'}
         </StyledButton>
       </ButtonContainer>
       <TitleBar>

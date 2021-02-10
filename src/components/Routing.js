@@ -9,11 +9,7 @@ import { Login } from "../pages/Login";
 import { Favorites } from "../pages/Favorites";
 import { HomePage } from "../pages/HomePage";
 
-//import { Logout } from "./Logout";
-//import { SurpriseMe } from "./SurpriseMe";
-
 export const Routing = () => {
-  //const accessToken = useSelector(store => store.user.login.accessToken);
   
   return (
     <BrowserRouter>
@@ -21,9 +17,7 @@ export const Routing = () => {
         <>
           <Nav />
           <Switch>
-            
             <Route path="/" exact component={Login} />
-  
             <Route path="/home" exact>
               <HomePage />
             </Route>
@@ -36,15 +30,12 @@ export const Routing = () => {
             <Route path="/browse" exact>
               <Browse />
             </Route>
-            
             <Route path="/favorites" exact>
               <Favorites />
             </Route>
-             
           </Switch>
-          
           <Footer />
-            </>    
+        </>    
       </main>  
     </BrowserRouter>
   )

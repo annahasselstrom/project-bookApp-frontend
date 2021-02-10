@@ -77,8 +77,7 @@ const StyledButton = styled.button`
   background:  #ffad4f;
   border: none;
 `
-
-export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, button }) => (
+export const Card = ({ title, subtitle, authors, averageRating, thumbnail, description, button, image }) => (
   <Container>
     <TitleBar>
       {thumbnail && <Thumbnail url={thumbnail} />}
