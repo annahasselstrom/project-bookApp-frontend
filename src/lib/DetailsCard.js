@@ -5,7 +5,7 @@ const Container = styled.div`
   padding: 20px;
   border-radius: 6px;
   border: black;
-  margin: 10px;
+  margin-top: 10px;
   background: white;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   @media (min-width: 768px) {
@@ -16,7 +16,9 @@ const Container = styled.div`
   }
 `
 const SecondaryContainer = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 26px;
+  margin-left: 20px;
+  margin-top: 30px;
   @media (min-width: 768px) {
     margin-left: 40px;
   }
@@ -68,8 +70,8 @@ const Content = styled.div`
 `
 const DescriptionContent = styled.div`
   margin-bottom: 20px;
-  margin-top: 30px;
   margin-right: 12px;
+  line-height: 1.4;
   @media (min-width: 768px) {
     display: flex;
     font-size: 14px;
@@ -80,7 +82,7 @@ const DescriptionContent = styled.div`
 `
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   @media (min-width: 768px) {
     margin-right: 22px;
   }
@@ -92,22 +94,15 @@ background-color:  #ffad4f;
 color: white;
 border: none;
 border-radius: 4px;
+margin-top: 20px;
 margin-bottom: 20px;
-margin-top: 12px;
-@media (min-width: 768px) {
-  margin-top: 15px;
-}
+  @media (min-width: 768px) {
+  margin-bottom: 0px;
+  }
 `
 export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail, description, isFavorite, onFavoriteToggle }) => (
   <Container>
     <SecondaryContainer>
-      <ButtonContainer>
-        {/*{button && <StyledButton>{button}</StyledButton>}*/}
-        <StyledButton
-          onClick={() => onFavoriteToggle(isFavorite)}>
-          {!isFavorite ? 'Add' : 'Remove'}
-        </StyledButton>
-      </ButtonContainer>
       <TitleBar>
         {thumbnail && <Thumbnail url={thumbnail} />}
         {!thumbnail && <Thumbnail url="https://via.placeholder.com/150x200"></Thumbnail>}
@@ -122,6 +117,12 @@ export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail
           </div>
         </Content>
       </TitleBar>
+      <ButtonContainer>
+        <StyledButton
+          onClick={() => onFavoriteToggle(isFavorite)}>
+          {isFavorite ? 'Remove' : 'Add to favorite'}
+        </StyledButton>
+      </ButtonContainer>
       <DescriptionContent>
         {description && <DescriptionContent>{description}</DescriptionContent>}
       </DescriptionContent>

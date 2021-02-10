@@ -32,11 +32,11 @@ export const SurpriseMe = () => {
       <section className="outer-container-surprise-card">
         {book && <Link to={`/title/${book.id}`}>
           {book && <Card
-          thumbnail={book && book.volumeInfo.imageLinks.thumbnail}
-          title={book && book.volumeInfo.title}
-          subtitle={book && book.volumeInfo.subtitle}
-          authors={book && book.volumeInfo.authors}
-          averageRating={book && book.volumeInfo.averageRating}
+            thumbnail={book && book.volumeInfo.imageLinks.thumbnail}
+            title={book && book.volumeInfo.title}
+            subtitle={book && book.volumeInfo.subtitle}
+            authors={book && book.volumeInfo.authors}
+            averageRating={book && book.volumeInfo.averageRating}
           />}
         </Link>}
       </section>

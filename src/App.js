@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers } from "@reduxjs/toolkit";
 
 import { Routing } from "./components/Routing"
-
 import { user } from "./reducers/user";
 import { favorite } from "./reducers/favorite";
 
@@ -35,4 +34,4 @@ export const App = () => {
       <Routing />
     </Provider>
   )
-}
+};

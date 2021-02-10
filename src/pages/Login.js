@@ -4,11 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { user } from "../reducers/user";
 
-
 const SIGNUP_URL = "https://annas-book-app.herokuapp.com/users";
-//http://localhost:8080/users
 const LOGIN_URL = "https://annas-book-app.herokuapp.com/sessions";
-//http://localhost:8080/sessions
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -75,7 +72,7 @@ export const Login = () => {
       });
   };
 
-  // Handle log in
+  // Handle login
   const handleLogin = (event) => {
     event.preventDefault();
 
@@ -105,11 +102,9 @@ export const Login = () => {
     }, [history, accessToken]);
   
   return (
-    <>
     <section className="signup main-container">
       <form>
         <h1 className="signup-heading">Sign Up/Login</h1>
-        {/*<label className="input-name"> Name: </label>*/}
         <input
           className="input-name"
           required
@@ -119,7 +114,6 @@ export const Login = () => {
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-        {/*<label className="input-password">Password:</label>*/}
         <input
           className="input-password"
           type="password"
@@ -141,8 +135,7 @@ export const Login = () => {
           </div>
         </div>
         {!accessToken && <p className="user-message">{messageToUser}</p>}
-          </form>
-      </section>
-      </>
+      </form>
+    </section>
   );
 };

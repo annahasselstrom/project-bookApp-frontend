@@ -21,33 +21,30 @@ export const Architecture = () => {
       .catch((error) => console.log(error))
   };
     
-    return (
-        <>
-            <form onSubmit={handleSubmit}>
-            <SubjectButton
-                type="submit" id="architecture"
-                title="Architecture">
-            </SubjectButton>
-        </form>
-        <div className="container-browse-result">
-
-
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <SubjectButton
+          type="submit" id="architecture"
+          title="Architecture">
+        </SubjectButton>
+      </form>
+      <div className="container-browse-result">
         {result.map(book => (
-              <>
-                <Link to={`/title/${book.id}`}
-                        key={book.id}>
-                    <Card
-                      thumbnail={book.volumeInfo.imageLinks.thumbnail}
-                      alt={book.volumeInfo.title}
-                      title={book.volumeInfo.title}
-                      subtitle={book.volumeInfo.subtitle}
-                      authors={book.volumeInfo.authors}
-                      averageRating={book.volumeInfo.averageRating}
-                    />
-                  </Link>
-                    </>
+          <Link
+            to={`/title/${book.id}`}
+            key={book.id}>
+            <Card
+              thumbnail={book.volumeInfo.imageLinks.thumbnail}
+              alt={book.volumeInfo.title}
+              title={book.volumeInfo.title}
+              subtitle={book.volumeInfo.subtitle}
+              authors={book.volumeInfo.authors}
+              averageRating={book.volumeInfo.averageRating}
+            />
+          </Link>
         ))} 
-          </div>
-        </>
-    )
+      </div>
+    </>
+  )
 };

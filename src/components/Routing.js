@@ -14,7 +14,6 @@ export const Routing = () => {
   return (
     <BrowserRouter>
       <main>
-        <>
           <Nav />
           <Switch>
             <Route path="/" exact component={Login} />
@@ -35,7 +34,6 @@ export const Routing = () => {
             </Route>
           </Switch>
           <Footer />
-        </>    
       </main>  
     </BrowserRouter>
   )

@@ -10,7 +10,6 @@ import { Design } from "./Design";
 import { Architecture } from "./Architecture";
 
 export const Browse = () => {
-  //const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const accessToken = useSelector((store) => store.user.login.accessToken);
   const history = useHistory();
 
@@ -18,7 +17,7 @@ export const Browse = () => {
     if (!accessToken) {
       history.push("/")
     }
-    }, [history, accessToken]);
+  }, [history, accessToken]);
 
   return (
     <>
