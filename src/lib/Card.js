@@ -56,6 +56,11 @@ const Thumbnail = styled.img`
 `
 const TitleBar = styled.div`
   display: flex;
+  @media (min-width: 768px) {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+  }
 `
 const Content = styled.div`
   justify-content: start;

@@ -25,14 +25,13 @@ main {
 /***** Nav *****/
 
 header {
-  /*box-sizing: border-box;*/
   background-color: #768a89;
   width: 100%;
   display: flex;
   position: sticky;
   top: 0;
   z-index: 1;
-  }
+}
 
 nav {
   display: flex;
@@ -197,18 +196,6 @@ input.input-password, input.input-name {
   margin-top: 2px;
 }
 
-input.input-password {
-  margin-top: 5px;
-}
-
-input:invalid {
-  border-bottom: 3px solid red;
-}
-
-input:valid {
-  border-bottom: 3px solid white;
-}
-
 input {
   margin-bottom: 20px;
   margin-top: 50px;
@@ -221,6 +208,7 @@ input {
   border-radius: 4px;
   width: 70%;
   align-self: center;
+  border-bottom: none;
 }
 
 input::placeholder {
@@ -228,6 +216,22 @@ input::placeholder {
   color: white;
   opacity: .7;
   text-align: center;
+}
+
+input.input-password {
+  margin-top: 5px;
+}
+
+input:valid {
+  border-bottom: 3px solid white;
+}
+
+input:invalid {
+  border-bottom: 3px solid #FF951C;
+}
+
+.search-input:valid {
+  border-bottom: none;
 }
 
 .user-message {

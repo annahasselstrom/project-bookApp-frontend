@@ -9,7 +9,6 @@ export const Anthropology = () => {
   
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const API_URL_ANT = `https://www.googleapis.com/books/v1/volumes?q=subject:'anthropology'&langRestrict="fr"&max-results=40&key=${API_KEY}`;
-  console.log(API_URL_ANT)
   
   const handleSubmit = (event) => {
     event.preventDefault();

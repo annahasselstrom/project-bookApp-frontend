@@ -1,13 +1,6 @@
-import React, {
-  useState,
-  useEffect
-} from "react";
-import {
-  Link,
-  useHistory
-} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 
 import { SurpriseMe } from "../components/SurpriseMe";
 import { Card } from "../lib/Card";
@@ -21,11 +14,9 @@ export const HomePage = () => {
 
   const API_KEY = "AIzaSyBMTkeEyzxF2RWvjntlELxi9BKATuFxRDU";
   const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${API_KEY}`;
-  //console.log(API_URL)
     
   const handleChange = (event) => {
     const book = event.target.value;
-
     setBook(book); //state variable, from input field
   };
 
@@ -41,7 +32,6 @@ export const HomePage = () => {
         .catch((error) => console.log(error))
   };
 
-  
   useEffect(() => {
     if (!accessToken) {
       history.push("/")
@@ -52,7 +42,7 @@ export const HomePage = () => {
     <>
       <section className="main-container">
         <form onSubmit={handleSubmit}>
-          <input
+          <input className="search-input"
             htmlFor="search"
             type="text"
             onChange={handleChange}

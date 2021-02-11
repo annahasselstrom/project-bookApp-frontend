@@ -1,12 +1,6 @@
 import React, { useEffect } from 'react';
-import {
-  useHistory,
-  Link
-} from 'react-router-dom';
-import {
-  useSelector,
-  useDispatch
-} from 'react-redux';
+import { useHistory, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import swal from 'sweetalert';
 
 import { favorite } from '../reducers/favorite';
@@ -27,20 +21,20 @@ export const Favorites = ({ book }) => {
     );
   };
       
-    const handleChange = () => {
-      swal({
-        title:'Clearing all favorites!',
-        text:'Are you sure?',
-        buttons: ['No!', 'Yes!'], 
-        dangerMode: true,
-        icon: 'success'
-      })
-        .then((willDelete) => {
-            if (willDelete) {
-      dispatch(favorite.actions.clearAll())
-            }
-        });
-    };
+  const handleChange = () => {
+    swal({
+      title:'Clearing all favorites!',
+      text:'Are you sure?',
+      buttons: ['No!', 'Yes!'], 
+      dangerMode: true,
+      icon: 'success'
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          dispatch(favorite.actions.clearAll())
+        }
+      });
+  };
 
   useEffect(() => {
     if (!accessToken) {

@@ -1,11 +1,5 @@
-import React, {
-  useEffect,
-  useState
-} from "react";
-import {
-  useDispatch,
-  useSelector
-} from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 import { user } from "../reducers/user";
@@ -28,14 +22,10 @@ export const Login = () => {
   // Sending the response from the fetches for both the SIGNUP_URL & LOGIN_URL to the redux store if the fetch was successful
   const handleLoginSuccess = (loginResponse) => {
     //localStorage.setItem('accessToken', loginResponse.accessToken);
-    dispatch(
-      user.actions.setAccessToken({ accessToken: loginResponse.accessToken })
-    );
+    dispatch(user.actions.setAccessToken({ accessToken: loginResponse.accessToken }));
     dispatch(user.actions.setUserId({ userId: loginResponse.id }));
     dispatch(user.actions.setName({ name: loginResponse.name }));
-    dispatch(
-      user.actions.setStatusMessage({ statusMessage: loginResponse.statusMessage })
-    );
+    dispatch(user.actions.setStatusMessage({ statusMessage: loginResponse.statusMessage }));
   };
 
   // If the fetch wasn't successful, because the user didn't give valid name or password when signing up or a when logging in the data sent didn't match was is stored in the database for that user e.g. name and password, then the access token is set to null and status message is that's returned in the json is sent to the redux store 
@@ -70,7 +60,9 @@ export const Login = () => {
         }
         return res.json();
       })
-      .then((json) => handleLoginSuccess(json))
+      .then((json) => {
+        handleLoginSuccess(json)
+      })
       .catch((err) => handleLoginFailed(err))
       .finally(() => {
         setName("");
