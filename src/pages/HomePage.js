@@ -1,6 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect
+} from "react";
+import {
+  Link,
+  useHistory
+} from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+
 
 import { SurpriseMe } from "../components/SurpriseMe";
 import { Card } from "../lib/Card";
@@ -46,6 +53,7 @@ export const HomePage = () => {
       <section className="main-container">
         <form onSubmit={handleSubmit}>
           <input
+            htmlFor="search"
             type="text"
             onChange={handleChange}
             placeholder="Search for Books"

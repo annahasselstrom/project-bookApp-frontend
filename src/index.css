@@ -201,6 +201,14 @@ input.input-password {
   margin-top: 5px;
 }
 
+input:invalid {
+  border-bottom: 3px solid red;
+}
+
+input:valid {
+  border-bottom: 3px solid white;
+}
+
 input {
   margin-bottom: 20px;
   margin-top: 50px;
@@ -273,6 +281,15 @@ input::placeholder {
   border: none;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/***** Clear all alert box *****/
+
+.swal-button--danger {
+  background-color: #FF814F;
+}
+.swal-modal {
+  border-radius: 20px;
 }
 
 /***** Page Headings *****/

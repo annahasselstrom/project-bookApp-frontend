@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, {
+  useEffect,
+  useState
+} from "react";
+import {
+  useDispatch,
+  useSelector
+} from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 import { user } from "../reducers/user";
@@ -59,7 +65,7 @@ export const Login = () => {
       .then((res) => {
         if (!res.ok) {
           throw new Error(
-            "Signup failed. Please enter a valid name and password."
+            "Signup failed. Please enter a valid name and password with min 5 characters."
           );
         }
         return res.json();
@@ -83,7 +89,7 @@ export const Login = () => {
     })
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Login failed. Please try again."); // throw redirects us to .catch
+          throw new Error("Login failed. Please try again. Password min length 5 characters"); // throw redirects us to .catch
         }
         return res.json();
       })
@@ -107,6 +113,7 @@ export const Login = () => {
         <h1 className="signup-heading">Sign Up/Login</h1>
         <input
           className="input-name"
+          htmlFor="username"
           required
           minLength="5"
           maxLength="20"
@@ -116,6 +123,7 @@ export const Login = () => {
         />
         <input
           className="input-password"
+          htmlFor="password"
           type="password"
           placeholder="Password"
           required

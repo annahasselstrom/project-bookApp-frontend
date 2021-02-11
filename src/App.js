@@ -1,14 +1,21 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore, combineReducers } from "@reduxjs/toolkit";
+import {
+  createStore,
+  combineReducers,
+} from "@reduxjs/toolkit";
 
 import { Routing } from "./components/Routing"
 import { user } from "./reducers/user";
 import { favorite } from "./reducers/favorite";
+import { ui } from "./reducers/ui";
+import { Loading } from "components/Loading";
+
 
 const reducer = combineReducers({
   user: user.reducer,
-  favorite: favorite.reducer
+  favorite: favorite.reducer,
+  ui: ui.reducer
 });
 
 // Persistence: Tell the store to persist the state in localStorage after every action
@@ -31,6 +38,7 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
+      <Loading />
       <Routing />
     </Provider>
   )
