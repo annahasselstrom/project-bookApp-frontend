@@ -169,6 +169,10 @@ h1 {
   margin: auto;
 }
 
+a.back-link {
+  display: contents;
+}
+
 /***** ListsList *****/
 
 .list-container {
