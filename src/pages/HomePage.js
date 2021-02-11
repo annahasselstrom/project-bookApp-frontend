@@ -72,10 +72,11 @@ export const HomePage = () => {
             />
           </Link>
         ))}  
-        <div>
-          <Browse />
-        </div>
+        
       </section>
+      <section>
+          <Browse />
+        </section>
     </>
   );
 };
