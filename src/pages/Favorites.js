@@ -27,15 +27,6 @@ export const Favorites = ({ book }) => {
     );
   };
       
-  {/*const handleChange = () => {
-    console.log('hello')
-    dispatch(
-      favorite.actions.clearAll()
-    );
-  };
-*/}
-  
-    
     const handleChange = () => {
       swal({
         title:'Clearing all favorites!',
