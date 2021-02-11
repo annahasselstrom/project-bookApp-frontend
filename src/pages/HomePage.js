@@ -75,8 +75,8 @@ export const HomePage = () => {
         
       </section>
       <section>
-          <Browse />
-        </section>
+        <Browse />
+      </section>
     </>
   );
 };
