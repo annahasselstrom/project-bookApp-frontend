@@ -12,7 +12,7 @@ export const Logout = () => {
     
     dispatch(user.actions.logout());
     dispatch(user.actions.setStatusMessage({ statusMessage:'' }));
-      history.push("/")
+    history.push("/")
   };
     
   return (

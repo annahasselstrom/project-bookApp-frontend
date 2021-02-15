@@ -127,6 +127,8 @@ export const DetailsCard = ({ title, subtitle, authors, averageRating, thumbnail
       </TitleBar>
       <ButtonContainer>
         <StyledButton
+          // If book is on favorite list, the Remove-button is rendered, else 
+          // the Add-button is rendered.
           onClick={() => onFavoriteToggle(isFavorite)}>
           {isFavorite ? 'Remove' : 'Add to favorite'}
         </StyledButton>

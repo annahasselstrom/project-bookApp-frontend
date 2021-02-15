@@ -72,7 +72,6 @@ export const HomePage = () => {
             />
           </Link>
         ))}  
-        
       </section>
       <section>
         <Browse />
