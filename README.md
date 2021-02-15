@@ -1,19 +1,24 @@
-# Technigo React Starter App
+# Book App Frontend 📚
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+A book search app making use of the Google Book API. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## View it Live 👀
 
-## Usage
+https://reverent-mclean-20de47.netlify.app 
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+For backend, see Heroku and own repo:
 
-Alternatively, if you don't want a new git repo on your account;
+https://github.com/annahasselstrom/project-bookApp-backend
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+https://annas-book-app.herokuapp.com/
+
+## Technologies used
+
+- MongoDB for managing authentication and for storing user data
+- React Router for navigation
+- React Redux for storing a user favorite list
+- LocalStorage to persist the list locally in browser and for keeping user logged in
+- Regex for cleaning API-text
+- Styled components
+- Re-usable components for rendering book data
+
